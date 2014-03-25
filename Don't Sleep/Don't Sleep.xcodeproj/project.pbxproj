@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8D48F7318E18CC000025EEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7218E18CC000025EEE /* Foundation.framework */; };
+		E8D48F7518E18CC000025EEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7418E18CC000025EEE /* CoreGraphics.framework */; };
+		E8D48F7718E18CC000025EEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7618E18CC000025EEE /* UIKit.framework */; };
+		E8D48F7918E18CC000025EEE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7818E18CC000025EEE /* CoreData.framework */; };
+		E8D48F7F18E18CC000025EEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D48F7D18E18CC000025EEE /* InfoPlist.strings */; };
+		E8D48F8118E18CC000025EEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D48F8018E18CC000025EEE /* main.m */; };
+		E8D48F8518E18CC000025EEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D48F8418E18CC000025EEE /* AppDelegate.m */; };
+		E8D48F8818E18CC000025EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D48F8618E18CC000025EEE /* Main.storyboard */; };
+		E8D48F8B18E18CC000025EEE /* Don_t_Sleep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8D48F8918E18CC000025EEE /* Don_t_Sleep.xcdatamodeld */; };
+		E8D48F9318E18CC000025EEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D48F9218E18CC000025EEE /* Images.xcassets */; };
+		E8D48F9A18E18CC000025EEE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F9918E18CC000025EEE /* XCTest.framework */; };
+		E8D48F9B18E18CC000025EEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7218E18CC000025EEE /* Foundation.framework */; };
+		E8D48F9C18E18CC000025EEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7618E18CC000025EEE /* UIKit.framework */; };
+		E8D48F9D18E18CC000025EEE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7818E18CC000025EEE /* CoreData.framework */; };
+		E8D48FA518E18CC000025EEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D48FA318E18CC000025EEE /* InfoPlist.strings */; };
+		E8D48FA718E18CC000025EEE /* Don_t_SleepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D48FA618E18CC000025EEE /* Don_t_SleepTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8D48F9E18E18CC000025EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8D48F6718E18CBF00025EEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8D48F6E18E18CBF00025EEE;
+			remoteInfo = "Don't Sleep";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8D48F6F18E18CC000025EEE /* Don't Sleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Don't Sleep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D48F7218E18CC000025EEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8D48F7418E18CC000025EEE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8D48F7618E18CC000025EEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8D48F7818E18CC000025EEE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E8D48F7C18E18CC000025EEE /* Don't Sleep-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Don't Sleep-Info.plist"; sourceTree = "<group>"; };
+		E8D48F7E18E18CC000025EEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8D48F8018E18CC000025EEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8D48F8218E18CC000025EEE /* Don't Sleep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Don't Sleep-Prefix.pch"; sourceTree = "<group>"; };
+		E8D48F8318E18CC000025EEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8D48F8418E18CC000025EEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8D48F8718E18CC000025EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8D48F8A18E18CC000025EEE /* Don_t_Sleep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Don_t_Sleep.xcdatamodel; sourceTree = "<group>"; };
+		E8D48F9218E18CC000025EEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E8D48F9818E18CC000025EEE /* Don't SleepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Don't SleepTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D48F9918E18CC000025EEE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E8D48FA218E18CC000025EEE /* Don't SleepTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Don't SleepTests-Info.plist"; sourceTree = "<group>"; };
+		E8D48FA418E18CC000025EEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8D48FA618E18CC000025EEE /* Don_t_SleepTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Don_t_SleepTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D48F6C18E18CBF00025EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48F7518E18CC000025EEE /* CoreGraphics.framework in Frameworks */,
+				E8D48F7918E18CC000025EEE /* CoreData.framework in Frameworks */,
+				E8D48F7718E18CC000025EEE /* UIKit.framework in Frameworks */,
+				E8D48F7318E18CC000025EEE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D48F9518E18CC000025EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48F9A18E18CC000025EEE /* XCTest.framework in Frameworks */,
+				E8D48F9D18E18CC000025EEE /* CoreData.framework in Frameworks */,
+				E8D48F9C18E18CC000025EEE /* UIKit.framework in Frameworks */,
+				E8D48F9B18E18CC000025EEE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8D48F6618E18CBF00025EEE = {
+			isa = PBXGroup;
+			children = (
+				E8D48F7A18E18CC000025EEE /* Don't Sleep */,
+				E8D48FA018E18CC000025EEE /* Don't SleepTests */,
+				E8D48F7118E18CC000025EEE /* Frameworks */,
+				E8D48F7018E18CC000025EEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D48F7018E18CC000025EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48F6F18E18CC000025EEE /* Don't Sleep.app */,
+				E8D48F9818E18CC000025EEE /* Don't SleepTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D48F7118E18CC000025EEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48F7218E18CC000025EEE /* Foundation.framework */,
+				E8D48F7418E18CC000025EEE /* CoreGraphics.framework */,
+				E8D48F7618E18CC000025EEE /* UIKit.framework */,
+				E8D48F7818E18CC000025EEE /* CoreData.framework */,
+				E8D48F9918E18CC000025EEE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8D48F7A18E18CC000025EEE /* Don't Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48F8318E18CC000025EEE /* AppDelegate.h */,
+				E8D48F8418E18CC000025EEE /* AppDelegate.m */,
+				E8D48F8618E18CC000025EEE /* Main.storyboard */,
+				E8D48F9218E18CC000025EEE /* Images.xcassets */,
+				E8D48F8918E18CC000025EEE /* Don_t_Sleep.xcdatamodeld */,
+				E8D48F7B18E18CC000025EEE /* Supporting Files */,
+			);
+			path = "Don't Sleep";
+			sourceTree = "<group>";
+		};
+		E8D48F7B18E18CC000025EEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48F7C18E18CC000025EEE /* Don't Sleep-Info.plist */,
+				E8D48F7D18E18CC000025EEE /* InfoPlist.strings */,
+				E8D48F8018E18CC000025EEE /* main.m */,
+				E8D48F8218E18CC000025EEE /* Don't Sleep-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8D48FA018E18CC000025EEE /* Don't SleepTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48FA618E18CC000025EEE /* Don_t_SleepTests.m */,
+				E8D48FA118E18CC000025EEE /* Supporting Files */,
+			);
+			path = "Don't SleepTests";
+			sourceTree = "<group>";
+		};
+		E8D48FA118E18CC000025EEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8D48FA218E18CC000025EEE /* Don't SleepTests-Info.plist */,
+				E8D48FA318E18CC000025EEE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8D48F6E18E18CBF00025EEE /* Don't Sleep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D48FAA18E18CC000025EEE /* Build configuration list for PBXNativeTarget "Don't Sleep" */;
+			buildPhases = (
+				E8D48F6B18E18CBF00025EEE /* Sources */,
+				E8D48F6C18E18CBF00025EEE /* Frameworks */,
+				E8D48F6D18E18CBF00025EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Don't Sleep";
+			productName = "Don't Sleep";
+			productReference = E8D48F6F18E18CC000025EEE /* Don't Sleep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8D48F9718E18CC000025EEE /* Don't SleepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D48FAD18E18CC000025EEE /* Build configuration list for PBXNativeTarget "Don't SleepTests" */;
+			buildPhases = (
+				E8D48F9418E18CC000025EEE /* Sources */,
+				E8D48F9518E18CC000025EEE /* Frameworks */,
+				E8D48F9618E18CC000025EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8D48F9F18E18CC000025EEE /* PBXTargetDependency */,
+			);
+			name = "Don't SleepTests";
+			productName = "Don't SleepTests";
+			productReference = E8D48F9818E18CC000025EEE /* Don't SleepTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D48F6718E18CBF00025EEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Don't Sleep";
+				TargetAttributes = {
+					E8D48F9718E18CC000025EEE = {
+						TestTargetID = E8D48F6E18E18CBF00025EEE;
+					};
+				};
+			};
+			buildConfigurationList = E8D48F6A18E18CBF00025EEE /* Build configuration list for PBXProject "Don't Sleep" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8D48F6618E18CBF00025EEE;
+			productRefGroup = E8D48F7018E18CC000025EEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D48F6E18E18CBF00025EEE /* Don't Sleep */,
+				E8D48F9718E18CC000025EEE /* Don't SleepTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D48F6D18E18CBF00025EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48F9318E18CC000025EEE /* Images.xcassets in Resources */,
+				E8D48F7F18E18CC000025EEE /* InfoPlist.strings in Resources */,
+				E8D48F8818E18CC000025EEE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D48F9618E18CC000025EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48FA518E18CC000025EEE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D48F6B18E18CBF00025EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48F8518E18CC000025EEE /* AppDelegate.m in Sources */,
+				E8D48F8118E18CC000025EEE /* main.m in Sources */,
+				E8D48F8B18E18CC000025EEE /* Don_t_Sleep.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D48F9418E18CC000025EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D48FA718E18CC000025EEE /* Don_t_SleepTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8D48F9F18E18CC000025EEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8D48F6E18E18CBF00025EEE /* Don't Sleep */;
+			targetProxy = E8D48F9E18E18CC000025EEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8D48F7D18E18CC000025EEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D48F7E18E18CC000025EEE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E8D48F8618E18CC000025EEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D48F8718E18CC000025EEE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8D48FA318E18CC000025EEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D48FA418E18CC000025EEE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8D48FA818E18CC000025EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E8D48FA918E18CC000025EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8D48FAB18E18CC000025EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Don't Sleep/Don't Sleep-Prefix.pch";
+				INFOPLIST_FILE = "Don't Sleep/Don't Sleep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8D48FAC18E18CC000025EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Don't Sleep/Don't Sleep-Prefix.pch";
+				INFOPLIST_FILE = "Don't Sleep/Don't Sleep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E8D48FAE18E18CC000025EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Don't Sleep.app/Don't Sleep";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Don't Sleep/Don't Sleep-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Don't SleepTests/Don't SleepTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E8D48FAF18E18CC000025EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Don't Sleep.app/Don't Sleep";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Don't Sleep/Don't Sleep-Prefix.pch";
+				INFOPLIST_FILE = "Don't SleepTests/Don't SleepTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D48F6A18E18CBF00025EEE /* Build configuration list for PBXProject "Don't Sleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D48FA818E18CC000025EEE /* Debug */,
+				E8D48FA918E18CC000025EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D48FAA18E18CC000025EEE /* Build configuration list for PBXNativeTarget "Don't Sleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D48FAB18E18CC000025EEE /* Debug */,
+				E8D48FAC18E18CC000025EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E8D48FAD18E18CC000025EEE /* Build configuration list for PBXNativeTarget "Don't SleepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D48FAE18E18CC000025EEE /* Debug */,
+				E8D48FAF18E18CC000025EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8D48F8918E18CC000025EEE /* Don_t_Sleep.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8D48F8A18E18CC000025EEE /* Don_t_Sleep.xcdatamodel */,
+			);
+			currentVersion = E8D48F8A18E18CC000025EEE /* Don_t_Sleep.xcdatamodel */;
+			path = Don_t_Sleep.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8D48F6718E18CBF00025EEE /* Project object */;
+}
