@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		916C98E318E18FDC00E67E4F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C98E218E18FDC00E67E4F /* MapViewController.m */; };
+		916C98E518E1909600E67E4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916C98E418E1909600E67E4F /* MapKit.framework */; };
 		E8D48F7318E18CC000025EEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7218E18CC000025EEE /* Foundation.framework */; };
 		E8D48F7518E18CC000025EEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7418E18CC000025EEE /* CoreGraphics.framework */; };
 		E8D48F7718E18CC000025EEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D48F7618E18CC000025EEE /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		916C98E118E18FDC00E67E4F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		916C98E218E18FDC00E67E4F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		916C98E418E1909600E67E4F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E8D48F6F18E18CC000025EEE /* Don't Sleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Don't Sleep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D48F7218E18CC000025EEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E8D48F7418E18CC000025EEE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916C98E518E1909600E67E4F /* MapKit.framework in Frameworks */,
 				E8D48F7518E18CC000025EEE /* CoreGraphics.framework in Frameworks */,
 				E8D48F7918E18CC000025EEE /* CoreData.framework in Frameworks */,
 				E8D48F7718E18CC000025EEE /* UIKit.framework in Frameworks */,
@@ -105,6 +111,7 @@
 		E8D48F7118E18CC000025EEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				916C98E418E1909600E67E4F /* MapKit.framework */,
 				E8D48F7218E18CC000025EEE /* Foundation.framework */,
 				E8D48F7418E18CC000025EEE /* CoreGraphics.framework */,
 				E8D48F7618E18CC000025EEE /* UIKit.framework */,
@@ -123,6 +130,8 @@
 				E8D48F9218E18CC000025EEE /* Images.xcassets */,
 				E8D48F8918E18CC000025EEE /* Don_t_Sleep.xcdatamodeld */,
 				E8D48F7B18E18CC000025EEE /* Supporting Files */,
+				916C98E118E18FDC00E67E4F /* MapViewController.h */,
+				916C98E218E18FDC00E67E4F /* MapViewController.m */,
 			);
 			path = "Don't Sleep";
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 				E8D48F8518E18CC000025EEE /* AppDelegate.m in Sources */,
 				E8D48F8118E18CC000025EEE /* main.m in Sources */,
 				E8D48F8B18E18CC000025EEE /* Don_t_Sleep.xcdatamodeld in Sources */,
+				916C98E318E18FDC00E67E4F /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +470,7 @@
 				E8D48FAC18E18CC000025EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D48FAD18E18CC000025EEE /* Build configuration list for PBXNativeTarget "Don't SleepTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				E8D48FAF18E18CC000025EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
