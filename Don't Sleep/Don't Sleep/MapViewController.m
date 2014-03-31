@@ -16,26 +16,30 @@
 
 @implementation MapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.map setShowsUserLocation:YES];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setCenterOnCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.001;
+    span.longitudeDelta = 0.001;
+    region.span = span;
+    region.center = coordinate;
+    [self.map setRegion:region animated:YES];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [self setCenterOnCoordinate:self.map.userLocation.location.coordinate];
+    [self.map setUserTrackingMode:MKUserTrackingModeFollow animated:NO];
+}
+
 
 /*
 #pragma mark - Navigation
