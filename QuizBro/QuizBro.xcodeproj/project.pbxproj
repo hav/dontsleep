@@ -26,6 +26,7 @@
 		E8BA3C8F18E9930700D4B278 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C8E18E9930700D4B278 /* Tag.m */; };
 		E8BA3C9218E9930700D4B278 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9118E9930700D4B278 /* Answer.m */; };
 		E8BA3C9518E9930700D4B278 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9418E9930700D4B278 /* Question.m */; };
+		E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		E8BA3C9118E9930700D4B278 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answer.m; path = Model/Answer.m; sourceTree = "<group>"; };
 		E8BA3C9318E9930700D4B278 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Model/Question.h; sourceTree = "<group>"; };
 		E8BA3C9418E9930700D4B278 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Model/Question.m; sourceTree = "<group>"; };
+		E8BA3C9D18E99AFB00D4B278 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = GameModel/BaseModel.h; sourceTree = "<group>"; };
+		E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = GameModel/BaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 				E8BA3C4618E98A6800D4B278 /* Main.storyboard */,
 				E8BA3C4918E98A6800D4B278 /* ViewController.h */,
 				E8BA3C4A18E98A6800D4B278 /* ViewController.m */,
+				E8BA3CA018E99B0000D4B278 /* New Group */,
 				E8BA3C7718E9914C00D4B278 /* Model */,
 				E8BA3C3B18E98A6800D4B278 /* Supporting Files */,
 			);
@@ -180,6 +184,15 @@
 				E8BA3C8E18E9930700D4B278 /* Tag.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E8BA3CA018E99B0000D4B278 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E8BA3C9D18E99AFB00D4B278 /* BaseModel.h */,
+				E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +294,7 @@
 			files = (
 				E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */,
 				E8BA3C9218E9930700D4B278 /* Answer.m in Sources */,
+				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */,
 				E8BA3C6D18E9905100D4B278 /* Main.xcdatamodeld in Sources */,
 				E8BA3C9518E9930700D4B278 /* Question.m in Sources */,
@@ -492,6 +506,7 @@
 				E8BA3C6518E98A6800D4B278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8BA3C6618E98A6800D4B278 /* Build configuration list for PBXNativeTarget "QuizBroTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +515,7 @@
 				E8BA3C6818E98A6800D4B278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
