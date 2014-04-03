@@ -1,0 +1,24 @@
+# General overview
+- Two players
+    - Most points each round win
+
+- Infinite questions
+    - Randomly selected from a pool of questions
+    * Looping around?
+    * Bonus questions that have some effect for opponent?
+
+- Time limit per round
+    - Should be able to set time limit visually
+    * Just adding some kind of lightning round setting?
+
+- Have to answer the most questions right in time limit
+    - Each question has its own time limit
+
+
+# Model
+
+- Game Model
+    - Questions
+    - Answers
+    - Timer
+    - Game
