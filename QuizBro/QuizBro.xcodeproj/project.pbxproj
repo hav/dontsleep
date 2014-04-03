@@ -23,10 +23,12 @@
 		E8BA3C6018E98A6800D4B278 /* QuizBroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C5F18E98A6800D4B278 /* QuizBroTests.m */; };
 		E8BA3C6A18E9904300D4B278 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C6918E9904300D4B278 /* CoreData.framework */; };
 		E8BA3C6D18E9905100D4B278 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C6B18E9905100D4B278 /* Main.xcdatamodeld */; };
-		E8BA3C8F18E9930700D4B278 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C8E18E9930700D4B278 /* Tag.m */; };
-		E8BA3C9218E9930700D4B278 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9118E9930700D4B278 /* Answer.m */; };
-		E8BA3C9518E9930700D4B278 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9418E9930700D4B278 /* Question.m */; };
 		E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */; };
+		E8BD2B4918ED4A50005EBC57 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BD2B4818ED4A50005EBC57 /* Question.m */; };
+		E8BD2B4C18ED4A50005EBC57 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BD2B4B18ED4A50005EBC57 /* Tag.m */; };
+		E8BD2B4F18ED4A50005EBC57 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BD2B4E18ED4A50005EBC57 /* Answer.m */; };
+		E8BD2B9B18ED4F24005EBC57 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = E8BD2B9A18ED4F24005EBC57 /* quiz.json */; };
+		E8BD2B9E18ED5206005EBC57 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BD2B9D18ED5206005EBC57 /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +63,17 @@
 		E8BA3C5F18E98A6800D4B278 /* QuizBroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizBroTests.m; sourceTree = "<group>"; };
 		E8BA3C6918E9904300D4B278 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E8BA3C6C18E9905100D4B278 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		E8BA3C8D18E9930700D4B278 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = Model/Tag.h; sourceTree = "<group>"; };
-		E8BA3C8E18E9930700D4B278 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = Model/Tag.m; sourceTree = "<group>"; };
-		E8BA3C9018E9930700D4B278 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answer.h; path = Model/Answer.h; sourceTree = "<group>"; };
-		E8BA3C9118E9930700D4B278 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answer.m; path = Model/Answer.m; sourceTree = "<group>"; };
-		E8BA3C9318E9930700D4B278 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Model/Question.h; sourceTree = "<group>"; };
-		E8BA3C9418E9930700D4B278 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Model/Question.m; sourceTree = "<group>"; };
 		E8BA3C9D18E99AFB00D4B278 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = GameModel/BaseModel.h; sourceTree = "<group>"; };
 		E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = GameModel/BaseModel.m; sourceTree = "<group>"; };
+		E8BD2B4718ED4A50005EBC57 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Model/Question.h; sourceTree = "<group>"; };
+		E8BD2B4818ED4A50005EBC57 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Model/Question.m; sourceTree = "<group>"; };
+		E8BD2B4A18ED4A50005EBC57 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = Model/Tag.h; sourceTree = "<group>"; };
+		E8BD2B4B18ED4A50005EBC57 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = Model/Tag.m; sourceTree = "<group>"; };
+		E8BD2B4D18ED4A50005EBC57 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Answer.h; path = Model/Answer.h; sourceTree = "<group>"; };
+		E8BD2B4E18ED4A50005EBC57 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Answer.m; path = Model/Answer.m; sourceTree = "<group>"; };
+		E8BD2B9A18ED4F24005EBC57 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = quiz.json; path = Resources/quiz.json; sourceTree = "<group>"; };
+		E8BD2B9C18ED5206005EBC57 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Model/DataManager.h; sourceTree = "<group>"; };
+		E8BD2B9D18ED5206005EBC57 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Model/DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +140,7 @@
 				E8BA3C4618E98A6800D4B278 /* Main.storyboard */,
 				E8BA3C4918E98A6800D4B278 /* ViewController.h */,
 				E8BA3C4A18E98A6800D4B278 /* ViewController.m */,
-				E8BA3CA018E99B0000D4B278 /* New Group */,
+				E8BA3CA018E99B0000D4B278 /* GameModel */,
 				E8BA3C7718E9914C00D4B278 /* Model */,
 				E8BA3C3B18E98A6800D4B278 /* Supporting Files */,
 			);
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E8BA3C4C18E98A6800D4B278 /* Images.xcassets */,
+				E8BD2B9A18ED4F24005EBC57 /* quiz.json */,
 				E8BA3C3C18E98A6800D4B278 /* QuizBro-Info.plist */,
 				E8BA3C3D18E98A6800D4B278 /* InfoPlist.strings */,
 				E8BA3C4018E98A6800D4B278 /* main.m */,
@@ -175,24 +181,26 @@
 		E8BA3C7718E9914C00D4B278 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8BD2B4718ED4A50005EBC57 /* Question.h */,
+				E8BD2B4818ED4A50005EBC57 /* Question.m */,
+				E8BD2B4D18ED4A50005EBC57 /* Answer.h */,
+				E8BD2B4E18ED4A50005EBC57 /* Answer.m */,
+				E8BD2B4A18ED4A50005EBC57 /* Tag.h */,
+				E8BD2B4B18ED4A50005EBC57 /* Tag.m */,
 				E8BA3C6B18E9905100D4B278 /* Main.xcdatamodeld */,
-				E8BA3C9318E9930700D4B278 /* Question.h */,
-				E8BA3C9418E9930700D4B278 /* Question.m */,
-				E8BA3C9018E9930700D4B278 /* Answer.h */,
-				E8BA3C9118E9930700D4B278 /* Answer.m */,
-				E8BA3C8D18E9930700D4B278 /* Tag.h */,
-				E8BA3C8E18E9930700D4B278 /* Tag.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		E8BA3CA018E99B0000D4B278 /* New Group */ = {
+		E8BA3CA018E99B0000D4B278 /* GameModel */ = {
 			isa = PBXGroup;
 			children = (
 				E8BA3C9D18E99AFB00D4B278 /* BaseModel.h */,
 				E8BA3C9E18E99AFB00D4B278 /* BaseModel.m */,
+				E8BD2B9C18ED5206005EBC57 /* DataManager.h */,
+				E8BD2B9D18ED5206005EBC57 /* DataManager.m */,
 			);
-			name = "New Group";
+			name = GameModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +281,7 @@
 			files = (
 				E8BA3C4D18E98A6800D4B278 /* Images.xcassets in Resources */,
 				E8BA3C3F18E98A6800D4B278 /* InfoPlist.strings in Resources */,
+				E8BD2B9B18ED4F24005EBC57 /* quiz.json in Resources */,
 				E8BA3C4818E98A6800D4B278 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,13 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */,
-				E8BA3C9218E9930700D4B278 /* Answer.m in Sources */,
 				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */,
+				E8BD2B4F18ED4A50005EBC57 /* Answer.m in Sources */,
+				E8BD2B4C18ED4A50005EBC57 /* Tag.m in Sources */,
 				E8BA3C6D18E9905100D4B278 /* Main.xcdatamodeld in Sources */,
-				E8BA3C9518E9930700D4B278 /* Question.m in Sources */,
+				E8BD2B4918ED4A50005EBC57 /* Question.m in Sources */,
+				E8BD2B9E18ED5206005EBC57 /* DataManager.m in Sources */,
 				E8BA3C4118E98A6800D4B278 /* main.m in Sources */,
-				E8BA3C8F18E9930700D4B278 /* Tag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

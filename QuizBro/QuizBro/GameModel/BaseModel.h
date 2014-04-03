@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol BaseModelProtocol <NSObject>
+
+
+@end
+
 @interface BaseModel : NSObject
 
+- (BOOL)didSelectAnswer:(NSString *)answerText;
+- (NSDictionary *)randomQuestionAndAnswers;
+
+@property (nonatomic, strong) id<BaseModelProtocol> delegate;
 
 @end

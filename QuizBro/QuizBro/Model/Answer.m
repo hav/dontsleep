@@ -2,7 +2,7 @@
 //  Answer.m
 //  QuizBro
 //
-//  Created by Farshid Besharati on 2014-03-31.
+//  Created by Farshid Besharati on 2014-04-03.
 //  Copyright (c) 2014 quizbro. All rights reserved.
 //
 
@@ -12,8 +12,9 @@
 
 @implementation Answer
 
-@dynamic identifier;
 @dynamic answerText;
+@dynamic identifier;
+@dynamic correctAnswer;
 @dynamic question;
 
 @end

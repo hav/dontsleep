@@ -2,7 +2,7 @@
 //  Answer.h
 //  QuizBro
 //
-//  Created by Farshid Besharati on 2014-03-31.
+//  Created by Farshid Besharati on 2014-04-03.
 //  Copyright (c) 2014 quizbro. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 
 @interface Answer : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * identifier;
 @property (nonatomic, retain) NSString * answerText;
+@property (nonatomic, retain) NSNumber * identifier;
+@property (nonatomic, retain) NSNumber * correctAnswer;
 @property (nonatomic, retain) Question *question;
 
 @end
