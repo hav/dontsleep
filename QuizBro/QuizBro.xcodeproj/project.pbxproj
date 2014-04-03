@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49DF18ED5FCF00C806E6 /* BoardViewController.m */; };
+		910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49E118ED5FCF00C806E6 /* GameViewController.m */; };
 		E8BA3C3518E98A6800D4B278 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3418E98A6800D4B278 /* Foundation.framework */; };
 		E8BA3C3718E98A6800D4B278 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3618E98A6800D4B278 /* CoreGraphics.framework */; };
 		E8BA3C3918E98A6800D4B278 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3818E98A6800D4B278 /* UIKit.framework */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		910B49DE18ED5FCF00C806E6 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
+		910B49DF18ED5FCF00C806E6 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
+		910B49E018ED5FCF00C806E6 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		910B49E118ED5FCF00C806E6 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		E8BA3C3118E98A6800D4B278 /* QuizBro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizBro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BA3C3418E98A6800D4B278 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E8BA3C3618E98A6800D4B278 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,10 @@
 		E8BA3C3A18E98A6800D4B278 /* QuizBro */ = {
 			isa = PBXGroup;
 			children = (
+				910B49DE18ED5FCF00C806E6 /* BoardViewController.h */,
+				910B49DF18ED5FCF00C806E6 /* BoardViewController.m */,
+				910B49E018ED5FCF00C806E6 /* GameViewController.h */,
+				910B49E118ED5FCF00C806E6 /* GameViewController.m */,
 				E8BA3C4318E98A6800D4B278 /* AppDelegate.h */,
 				E8BA3C4418E98A6800D4B278 /* AppDelegate.m */,
 				E8BA3C4618E98A6800D4B278 /* Main.storyboard */,
@@ -302,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */,
+				910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */,
+				910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */,
 				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */,
 				E8BD2B4F18ED4A50005EBC57 /* Answer.m in Sources */,
