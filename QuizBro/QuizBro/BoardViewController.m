@@ -9,6 +9,7 @@
 #import "BoardViewController.h"
 #import "GameViewController.h"
 #import "DataManager.h"
+#import "CircularTimerView.h"
 
 
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic)  NSInteger* rightAnswers;
 @property (nonatomic)  NSInteger* wrongAnswers;
+@property (nonatomic, strong) CircularTimerView *circularTimerView;
 
 @end
 
@@ -60,6 +62,8 @@
 }
 
 - (void)loadNewAnswer{
+    
+    [self initTimer];
 
     self.answerAButton.backgroundColor = [UIColor whiteColor];
     self.answerBButton.backgroundColor = [UIColor whiteColor];
@@ -107,6 +111,56 @@
     self.chosenAnswer = (UIButton*) sender;
     self.chosenAnswer.backgroundColor = [UIColor greenColor];
 }
+
+- (void)initTimer
+{
+    // Remove the last view
+    for (UIView *subView in self.view.subviews)
+    {
+        if ([subView isKindOfClass:[CircularTimerView class]])
+        {
+            [subView removeFromSuperview];
+        }
+    }
+    
+    self.circularTimerView =
+    [[CircularTimerView alloc] initWithPosition:CGPointMake(410.f, 20.f)
+                                         radius:20
+                                 internalRadius:15
+                                 returnInstance:self];
+    
+    // Light gray circle
+    self.circularTimerView.backgroundColor = [UIColor lightGrayColor];
+    self.circularTimerView.backgroundFadeColor = [UIColor lightGrayColor];
+    
+    // Circle Fade from green to red
+    self.circularTimerView.foregroundColor = [UIColor greenColor];
+    self.circularTimerView.foregroundFadeColor = [UIColor redColor];
+    self.circularTimerView.direction = CircularTimerViewDirectionCounterClockwise;
+    
+    // Text fade from green to red
+    self.circularTimerView.font = [UIFont systemFontOfSize:10];
+    self.circularTimerView.fontColor = [UIColor greenColor];
+    self.circularTimerView.fontFadeColor = [UIColor redColor];
+    
+    // Display seconds - format text here
+    self.circularTimerView.frameBlock = ^(CircularTimerView *circularTimerView){
+        NSTimeInterval elapsed = [circularTimerView runningElapsedTime];
+        NSTimeInterval total = [circularTimerView intervalLength];
+        circularTimerView.text = [NSString stringWithFormat:@"%.0f",total - elapsed];
+    };
+    
+    // 1 minute timer
+    [self.circularTimerView setupCountdown:15];
+    
+    [self.view addSubview:self.circularTimerView];
+}
+
+- (void)timeOut
+{
+    NSLog(@"%@ timed out",self);
+}
+
 
 
 

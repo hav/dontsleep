@@ -29,4 +29,6 @@
 
 @property (retain, nonatomic) UIButton* chosenAnswer;
 
+- (void)timeOut;
+
 @end
