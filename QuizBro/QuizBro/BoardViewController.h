@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *wrongAnswersText;
 @property (weak, nonatomic) IBOutlet UILabel *rightAnswersText;
 
+
+
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *answerAButton;
 @property (weak, nonatomic) IBOutlet UIButton *answerBButton;

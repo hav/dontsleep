@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 quizbro. All rights reserved.
 //
 
+#import "ResultAnswerPopUpView.h"
 #import "BoardViewController.h"
 #import "GameViewController.h"
 #import "DataManager.h"
@@ -105,6 +106,9 @@
 }
 - (IBAction)skipQuestion:(id)sender {
     [self loadNewAnswer];
+    
+    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
+    [self.view addSubview:resultAnswerPopUpView];
 }
 
 - (IBAction)clickOnAnswer:(id)sender {
