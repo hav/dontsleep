@@ -106,9 +106,6 @@
 }
 - (IBAction)skipQuestion:(id)sender {
     [self loadNewAnswer];
-    
-    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
-    [self.view addSubview:resultAnswerPopUpView];
 }
 
 - (IBAction)clickOnAnswer:(id)sender {
@@ -163,6 +160,9 @@
 - (void)timeOut
 {
     NSLog(@"%@ timed out",self);
+    
+    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
+    [self.view addSubview:resultAnswerPopUpView];
 }
 
 
