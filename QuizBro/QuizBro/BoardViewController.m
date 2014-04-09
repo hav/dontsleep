@@ -14,6 +14,8 @@
 
 @interface BoardViewController ()
 
+@property (nonatomic)  NSInteger* rightAnswers;
+@property (nonatomic)  NSInteger* wrongAnswers;
 
 @end
 
@@ -26,12 +28,27 @@
     [[DataManager sharedInstance] seedDatabase];
     [[DataManager sharedInstance] managedObjectContext];
     
-    self.chosenAnswer = [[UITextField alloc] init];
-    
-    self.wrongAnswers = 0;
-    self.rightAnswers = 0;
+    self.chosenAnswer = [[UIButton alloc] init];
     
     [self loadNewAnswer];
+}
+
+- (NSInteger*)rightAnswers
+{
+    if(!_rightAnswers)
+    {
+        _rightAnswers = 0;
+    }
+    return _rightAnswers;
+}
+
+- (NSInteger*)wrongAnswers
+{
+    if(!_wrongAnswers)
+    {
+        _wrongAnswers = 0;
+    }
+    return _wrongAnswers;
 }
 
 - (BaseModel *)baseModel {
@@ -58,15 +75,20 @@
     NSString* answerC = [question objectForKey:@"Answer_3"];
     NSString* answerD = [question objectForKey:@"Answer_4"];
     
-    self.questionTextView.text = questionText;
-    self.answerAButton.titleLabel.text = answerA;
-    self.answerBButton.titleLabel.text = answerB;
-    self.answerCButton.titleLabel.text = answerC;
-    self.answerDButton.titleLabel.text = answerD;
+    // set question
+    [self.questionTextView setText:questionText];
+    
+    // set answers
+    [self.answerAButton setTitle:answerA forState:UIControlStateNormal];
+    [self.answerBButton setTitle:answerB forState:UIControlStateNormal];
+    [self.answerCButton setTitle:answerC forState:UIControlStateNormal];
+    [self.answerDButton setTitle:answerD forState:UIControlStateNormal];
+    
+    
 }
 
 - (IBAction)checkAnswer:(id)sender {
-    if(self.chosenAnswer != nil && [self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
+    if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
         self.rightAnswers++;
         self.rightAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.rightAnswers];
     }

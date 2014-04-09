@@ -27,9 +27,6 @@
 
 @property (nonatomic, strong) BaseModel *baseModel;
 
-@property NSInteger* rightAnswers;
-@property NSInteger* wrongAnswers;
-
 @property (retain, nonatomic) UIButton* chosenAnswer;
 
 @end
