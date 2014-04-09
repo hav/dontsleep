@@ -11,6 +11,7 @@
 		910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49DF18ED5FCF00C806E6 /* BoardViewController.m */; };
 		910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49E118ED5FCF00C806E6 /* GameViewController.m */; };
 		91674EA118F5731300A85AB9 /* ResultAnswerPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91674EA018F5731300A85AB9 /* ResultAnswerPopUpView.m */; };
+		91674EA718F5832000A85AB9 /* TimeOutPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91674EA618F5832000A85AB9 /* TimeOutPopUpView.m */; };
 		E8BA3C3518E98A6800D4B278 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3418E98A6800D4B278 /* Foundation.framework */; };
 		E8BA3C3718E98A6800D4B278 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3618E98A6800D4B278 /* CoreGraphics.framework */; };
 		E8BA3C3918E98A6800D4B278 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3818E98A6800D4B278 /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 		910B49E118ED5FCF00C806E6 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		91674E9F18F5731300A85AB9 /* ResultAnswerPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultAnswerPopUpView.h; sourceTree = "<group>"; };
 		91674EA018F5731300A85AB9 /* ResultAnswerPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultAnswerPopUpView.m; sourceTree = "<group>"; };
+		91674EA518F5832000A85AB9 /* TimeOutPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeOutPopUpView.h; sourceTree = "<group>"; };
+		91674EA618F5832000A85AB9 /* TimeOutPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOutPopUpView.m; sourceTree = "<group>"; };
 		E8BA3C3118E98A6800D4B278 /* QuizBro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizBro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BA3C3418E98A6800D4B278 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E8BA3C3618E98A6800D4B278 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				E8BA3C3B18E98A6800D4B278 /* Supporting Files */,
 				91674E9F18F5731300A85AB9 /* ResultAnswerPopUpView.h */,
 				91674EA018F5731300A85AB9 /* ResultAnswerPopUpView.m */,
+				91674EA518F5832000A85AB9 /* TimeOutPopUpView.h */,
+				91674EA618F5832000A85AB9 /* TimeOutPopUpView.m */,
 			);
 			path = QuizBro;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				91674EA118F5731300A85AB9 /* ResultAnswerPopUpView.m in Sources */,
 				E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */,
 				910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */,
+				91674EA718F5832000A85AB9 /* TimeOutPopUpView.m in Sources */,
 				910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */,
 				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */,

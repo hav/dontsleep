@@ -7,6 +7,7 @@
 //
 
 #import "ResultAnswerPopUpView.h"
+#import "TimeOutPopUpView.h"
 #import "BoardViewController.h"
 #import "GameViewController.h"
 #import "DataManager.h"
@@ -93,11 +94,17 @@
 }
 
 - (IBAction)checkAnswer:(id)sender {
+    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
+    
     if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
+        [resultAnswerPopUpView initWithResult:TRUE];
+        [self.view addSubview:resultAnswerPopUpView];
         self.rightAnswers++;
         self.rightAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.rightAnswers];
     }
     else{
+        [resultAnswerPopUpView initWithResult:FALSE];
+        [self.view addSubview:resultAnswerPopUpView];
         self.wrongAnswers++;
         self.wrongAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.wrongAnswers];
     }
@@ -160,9 +167,8 @@
 - (void)timeOut
 {
     NSLog(@"%@ timed out",self);
-    
-    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
-    [self.view addSubview:resultAnswerPopUpView];
+     TimeOutPopUpView *timeOutPopUpView = [[TimeOutPopUpView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width - 20, 30)];
+    [self.view addSubview:timeOutPopUpView];
 }
 
 

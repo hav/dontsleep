@@ -1,5 +1,5 @@
 //
-//  ResultAnswerPopUpView.h
+//  TimeOutPopUpView.h
 //  QuizBro
 //
 //  Created by Christian Danheimer Furedal on 2014-04-09.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultAnswerPopUpView : UIView
-
--(void)initWithResult:(BOOL)result;
+@interface TimeOutPopUpView : UIView
 
 @end
