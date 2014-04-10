@@ -19,6 +19,8 @@
 @property (nonatomic, strong) Question *currentQuestion;
 @property (nonatomic, strong) Answer *currentCorrectAnswer;
 
+@property (nonatomic) NSInteger *myScore;
+
 @end
 
 @implementation BaseModel
@@ -48,11 +50,25 @@
     return randomQuestion;
 }
 
+- (NSMutableArray *)questions {
+    if (!_questions)
+    {
+        _questions = [[NSMutableArray alloc] init];
+    }
+    
+    return _questions;
+}
+
+static const int CORRECT_ANSWER_BONUS = 2;
+static const int WRONG_ANSWER_PENALTY = 1;
+
 - (BOOL)didSelectAnswer:(NSString *)answerText {
     if ([self.currentCorrectAnswer.answerText isEqualToString:answerText]) {
+        self.myScore = self.myScore + CORRECT_ANSWER_BONUS;
         return YES;
     }
     
+    self.myScore = self.myScore - WRONG_ANSWER_PENALTY;
     return NO;
 }
 
@@ -73,6 +89,10 @@
     }];
     
     return [dict copy];
+}
+
+- (NSInteger *) getScore{
+    return self.myScore;
 }
 
 
