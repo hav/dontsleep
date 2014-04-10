@@ -7,6 +7,8 @@
 //
 //  Distributed under MIT license, see LICENSE file
 //
+//  Edited by Boris Kachscovsky (DEVGUI2)
+//
 
 #import <UIKit/UIKit.h>
 #import "BoardViewController.h"
