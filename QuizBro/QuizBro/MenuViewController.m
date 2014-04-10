@@ -40,8 +40,15 @@
 
             UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 30, 30)];
             questionMark.text = @"?";
+            
             questionMark.textAlignment = NSTextAlignmentCenter;
+            NSMutableAttributedString *atbQuestionText = [[NSMutableAttributedString alloc] initWithString:questionMark.text];
+            [atbQuestionText addAttribute:NSFontAttributeName
+                                    value:[UIFont systemFontOfSize:[self randomIntBetween:12 and:24]]
+                                    range:NSMakeRange(0, questionMark.text.length)];
+            [questionMark setAttributedText:atbQuestionText.copy];
             questionMark.alpha = 0.5;
+            
 //            If we want it green, like in the matrix!
 //            questionMark.attributedText = [[NSAttributedString alloc] initWithString:@"?" attributes:@{NSForegroundColorAttributeName : [UIColor greenColor]}];
             [self.view addSubview:questionMark];

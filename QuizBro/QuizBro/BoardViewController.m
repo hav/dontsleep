@@ -254,7 +254,8 @@
     for (UIView *subView in self.view.subviews)
     {
         if ([subView isKindOfClass:[TimeOutPopUpView class]] ||
-            [subView isKindOfClass:[ResultAnswerPopUpView class]])
+            [subView isKindOfClass:[ResultAnswerPopUpView class]] ||
+            [subView isKindOfClass:[CircularTimerView class]])
         {
             [subView removeFromSuperview];
         }
