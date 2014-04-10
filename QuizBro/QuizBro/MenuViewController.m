@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 
 @interface MenuViewController ()
+
+@property (nonatomic) BOOL animating;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -18,15 +20,18 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
     [self performSelector:@selector(displayStartButton:)
                withObject:@"Start"
-               afterDelay:0.0];
+               afterDelay:0.5];
+    
+    self.animating = YES;
     [self performSelectorInBackground:@selector(animationLoop) withObject:nil];
 }
 
 - (void)animationLoop
 {
-    while(YES)
+    while(self.animating)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize size = self.view.bounds.size;
@@ -49,7 +54,6 @@
                              completion:nil];
         });
         float randomFloat = (arc4random() % 10) * .005;
-        NSLog(@"%f",randomFloat);
         [NSThread sleepForTimeInterval:randomFloat];
     }
 }
@@ -76,7 +80,7 @@
     self.startButton.layer.cornerRadius = 8;
     self.startButton.layer.masksToBounds = YES;
     
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ self.startButton.alpha = 1;}
                      completion:nil];
 }
@@ -87,7 +91,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,7 +98,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    self.animating = NO;
 }
-*/
 
 @end
