@@ -214,7 +214,7 @@
     // Text
     if (self.text && self.font) {
 //        CGSize textSize = [self.text sizeWithFont:self.font];
-        if (self.running == NO || [self.text isEqualToString:@"0"]) {
+        if (self.running == NO) {
             self.text = @"Time!";
         }
         CGSize textSize = [self.text sizeWithAttributes:nil];

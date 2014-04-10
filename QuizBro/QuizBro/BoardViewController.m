@@ -225,6 +225,7 @@
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
     [self fadeIn:self.nextQuestionButton];
+    [self.circularTimerView stop];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
