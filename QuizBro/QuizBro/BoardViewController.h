@@ -26,6 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextQuestionButton;
 
 @property (nonatomic, strong) BaseModel *baseModel;
 

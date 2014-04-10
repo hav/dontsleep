@@ -132,9 +132,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    if (self.running == NO) {
-        return;
-    }
+//    if (self.running == NO) {
+//        return;
+//    }
     
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval finSecs = [self.finalDate timeIntervalSince1970];
@@ -214,6 +214,9 @@
     // Text
     if (self.text && self.font) {
 //        CGSize textSize = [self.text sizeWithFont:self.font];
+        if (self.running == NO || [self.text isEqualToString:@"0"]) {
+            self.text = @"Time!";
+        }
         CGSize textSize = [self.text sizeWithAttributes:nil];
         CGPoint textCenter = CGPointMake(center.x - textSize.width / 2, center.y - textSize.height / 2);
         if (self.fontColor) {
@@ -250,6 +253,7 @@
         if (self.endBlock != nil) {
             self.endBlock(self);
         }
+        // QuizBro Code
         [self.board timeOut];
         return;
     }
