@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31490C6E18F7E67D00C7DE20 /* BoardAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */; };
 		314D0B9618F5AB09004F2010 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314D0B9518F5AB09004F2010 /* Images.xcassets */; };
 		3191252418F76E970039BF5C /* CircularTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191252318F76E970039BF5C /* CircularTimer.m */; };
 		31A2FA5C18F57EE100856C50 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A2FA5B18F57EE100856C50 /* MenuViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31490C6C18F7E67D00C7DE20 /* BoardAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardAnimations.h; sourceTree = "<group>"; };
+		31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardAnimations.m; sourceTree = "<group>"; };
 		314D0B9518F5AB09004F2010 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3191252218F76E970039BF5C /* CircularTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularTimer.h; sourceTree = "<group>"; };
 		3191252318F76E970039BF5C /* CircularTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularTimer.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 			children = (
 				910B49DE18ED5FCF00C806E6 /* BoardViewController.h */,
 				910B49DF18ED5FCF00C806E6 /* BoardViewController.m */,
+				31490C6C18F7E67D00C7DE20 /* BoardAnimations.h */,
+				31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */,
 				910B49E018ED5FCF00C806E6 /* GameViewController.h */,
 				910B49E118ED5FCF00C806E6 /* GameViewController.m */,
 				E8BA3C4318E98A6800D4B278 /* AppDelegate.h */,
@@ -346,6 +351,7 @@
 				910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */,
 				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				3191252418F76E970039BF5C /* CircularTimer.m in Sources */,
+				31490C6E18F7E67D00C7DE20 /* BoardAnimations.m in Sources */,
 				E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */,
 				E8BD2B4F18ED4A50005EBC57 /* Answer.m in Sources */,
 				E8BD2B4C18ED4A50005EBC57 /* Tag.m in Sources */,

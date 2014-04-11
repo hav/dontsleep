@@ -9,6 +9,7 @@
 #import "ResultAnswerPopUpView.h"
 #import "TimeOutPopUpView.h"
 #import "BoardViewController.h"
+#import "BoardAnimations.h"
 #import "GameViewController.h"
 #import "DataManager.h"
 #import "CircularTimer.h"
@@ -21,7 +22,7 @@
 @property (nonatomic)  NSNumber* wrongAnswers;
 @property (nonatomic) UIColor* yellow;
 @property (nonatomic) UIColor* green;
-@property (nonatomic, strong) CircularTimer *circularTimer;
+@property (nonatomic, weak) CircularTimer *circularTimer;
 
 @end
 
@@ -30,10 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.yellow = [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-    self.green = [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
     
-    [self createUI];
     [[DataManager sharedInstance] seedDatabase];
     [[DataManager sharedInstance] managedObjectContext];
     
@@ -47,8 +45,56 @@
     [self updateUI];
 }
 
+- (UIColor*)green
+{
+    if(!_green)
+    {
+        _green = [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
+    }
+    return _green;
+}
+
+- (UIColor*)yellow
+{
+    if(!_yellow)
+    {
+        _yellow = [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
+    }
+    return _yellow;
+}
+
+- (NSNumber*)rightAnswers
+{
+    if(!_rightAnswers)
+    {
+        _rightAnswers = 0;
+    }
+    return _rightAnswers;
+}
+
+- (NSNumber*)wrongAnswers
+{
+    if(!_wrongAnswers)
+    {
+        _wrongAnswers = 0;
+    }
+    return _wrongAnswers;
+}
+
+- (BaseModel *)baseModel {
+    if (!_baseModel) {
+        _baseModel = [[BaseModel alloc] init];
+    }
+    
+    return _baseModel;
+}
+
 - (void)updateUI
 {
+    self.view.layer.borderWidth = 1;
+    self.view.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.view.layer.cornerRadius = 8;
+    self.view.layer.masksToBounds = YES;
 
     // Edit Skip Button
     self.skipButton.layer.backgroundColor = self.yellow.CGColor;
@@ -93,40 +139,6 @@
     self.nextQuestionButton.alpha = 0;
 }
 
-- (void)createUI
-{
-    self.view.layer.borderWidth = 1;
-    self.view.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.view.layer.cornerRadius = 8;
-    self.view.layer.masksToBounds = YES;
-}
-
-- (NSNumber*)rightAnswers
-{
-    if(!_rightAnswers)
-    {
-        _rightAnswers = 0;
-    }
-    return _rightAnswers;
-}
-
-- (NSNumber*)wrongAnswers
-{
-    if(!_wrongAnswers)
-    {
-        _wrongAnswers = 0;
-    }
-    return _wrongAnswers;
-}
-
-- (BaseModel *)baseModel {
-    if (!_baseModel) {
-        _baseModel = [[BaseModel alloc] init];
-    }
-    
-    return _baseModel;
-}
-
 - (void)loadNewAnswer{
     
     [self initTimer];
@@ -161,57 +173,6 @@
     
 }
 
-- (void)fadeButton:(UIButton *)button
-{
-    button.alpha = 0.8;
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.alpha = 1;}
-                     completion:nil];
-}
-
-- (void)fadeOut:(UIButton *)button
-{
-    button.alpha = 1;
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.alpha = 0;}
-                     completion:nil];
-}
-
-- (void)fadeIn:(UIButton *)button
-{
-    button.alpha = 0;
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.alpha = 1;}
-                     completion:nil];
-}
-
-- (void)invertSelection:(UIButton *)button
-{
-    UIColor *newColor;
-    if(button.layer.backgroundColor == self.green.CGColor)
-    {
-        newColor = [UIColor whiteColor];
-    }
-    else
-    {
-        newColor = self.green;
-    }
-    
-    
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.layer.backgroundColor = newColor.CGColor;}
-                     completion:nil];
-        
-}
-
-- (void)deselect:(UIButton *)button
-{
-    UIColor *newColor = [UIColor whiteColor];
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.layer.backgroundColor = newColor.CGColor;}
-                     completion:nil];
-}
-
 - (IBAction)checkAnswer:(id)sender {
     CGSize viewSize = self.view.frame.size;
 
@@ -228,25 +189,25 @@
         self.wrongAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.wrongAnswers];
     }
     
-    [self animatePopupwithView:resultAnswerPopUpView];
+    [BoardAnimations animatePopupwith:resultAnswerPopUpView on:self.view];
     
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
-    [self fadeIn:self.nextQuestionButton];
+    [BoardAnimations fadeIn:self.nextQuestionButton];
     [self.circularTimer stop];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
     self.nextQuestionButton.alpha = 0;
-    [self fadeIn:self.checkButton];
-    [self fadeIn:self.skipButton];
+    [BoardAnimations fadeIn:self.checkButton];
+    [BoardAnimations fadeIn:self.skipButton];
     [self removeSubviews];
     [self loadNewAnswer];
 }
 
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
-    [self fadeButton:(UIButton*) sender];
+    [BoardAnimations fadeButton:(UIButton*) sender];
     [self loadNewAnswer];
 }
 
@@ -254,16 +215,16 @@
     if(![sender isEqual:self.chosenAnswer])
         [self deselectAll];
     // Button Animation
-    [self invertSelection:(UIButton*) sender];
+    [BoardAnimations invertSelection:(UIButton*) sender fromColor:self.green];
     self.chosenAnswer = (UIButton*) sender;
 }
 
 - (void)deselectAll
 {
-    [self deselect:self.answerAButton];
-    [self deselect:self.answerBButton];
-    [self deselect:self.answerCButton];
-    [self deselect:self.answerDButton];
+    [BoardAnimations deselect:self.answerAButton];
+    [BoardAnimations deselect:self.answerBButton];
+    [BoardAnimations deselect:self.answerCButton];
+    [BoardAnimations deselect:self.answerDButton];
 }
 
 - (void)removeSubviews
@@ -272,9 +233,12 @@
     for (UIView *subView in self.view.subviews)
     {
         if ([subView isKindOfClass:[TimeOutPopUpView class]] ||
-            [subView isKindOfClass:[ResultAnswerPopUpView class]] ||
-            [subView isKindOfClass:[CircularTimer class]])
+            [subView isKindOfClass:[ResultAnswerPopUpView class]])
         {
+            [subView removeFromSuperview];
+        }
+        else if([subView isKindOfClass:[CircularTimer class]]){
+            [((CircularTimer *)subView) stop];
             [subView removeFromSuperview];
         }
     }
@@ -287,12 +251,13 @@
     {
         if ([subView isKindOfClass:[CircularTimer class]])
         {
+            [((CircularTimer *)subView) stop];
             [subView removeFromSuperview];
         }
     }
     
     NSDate *initialDate = [NSDate date];
-    NSDate *finalDate = [NSDate dateWithTimeInterval:15 sinceDate:initialDate];
+    NSDate *finalDate = [NSDate dateWithTimeInterval:5 sinceDate:initialDate];
     
     self.circularTimer = [[CircularTimer alloc] initWithPosition:CGPointMake(410.0f, 20.0f)
                                                           radius:20
@@ -314,42 +279,13 @@
 - (void)timeOut
 {
     CGSize viewSize = self.view.frame.size;
-    
     TimeOutPopUpView *timeOutPopUpView = [[TimeOutPopUpView alloc]
                                           initWithFrame:
                                           CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
-    [self animatePopupwithView:timeOutPopUpView];
+    [BoardAnimations animatePopupwith:timeOutPopUpView on:self.view];
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
-    [self fadeIn:self.nextQuestionButton];    
-}
-
-- (void)animatePopupwithView:(UIView *)view
-{
-    CGSize viewSize = self.view.frame.size;
-    int startyPosition = view.frame.origin.x;
-    int endyPosition = viewSize.height / 2;
-    
-    view.alpha = 0;
-    
-    // Animate & Jump
-    CGFloat offset = .1*(endyPosition - startyPosition);
-    
-    [UIView animateWithDuration:.3 animations:^{
-        CGRect frame = view.frame;
-        frame.origin.y = endyPosition + offset;
-        view.frame = frame;
-        view.alpha = 0.3;
-    } completion:^(BOOL finished){
-        [UIView animateWithDuration:.1 animations:^{
-            CGRect frame = view.frame;
-            frame.origin.y = endyPosition;
-            view.frame = frame;
-            view.alpha = 1;
-        }];
-    }];
-    
-    [self.view addSubview:view];
+    [BoardAnimations fadeIn:self.nextQuestionButton];
 }
 
 
