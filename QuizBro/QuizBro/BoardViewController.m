@@ -17,8 +17,8 @@
 
 @interface BoardViewController ()
 
-@property (nonatomic)  NSInteger* rightAnswers;
-@property (nonatomic)  NSInteger* wrongAnswers;
+@property (nonatomic)  NSNumber* rightAnswers;
+@property (nonatomic)  NSNumber* wrongAnswers;
 @property (nonatomic) UIColor* yellow;
 @property (nonatomic) UIColor* green;
 @property (nonatomic, strong) CircularTimerView *circularTimerView;
@@ -101,7 +101,7 @@
     self.view.layer.masksToBounds = YES;
 }
 
-- (NSInteger*)rightAnswers
+- (NSNumber*)rightAnswers
 {
     if(!_rightAnswers)
     {
@@ -110,7 +110,7 @@
     return _rightAnswers;
 }
 
-- (NSInteger*)wrongAnswers
+- (NSNumber*)wrongAnswers
 {
     if(!_wrongAnswers)
     {
@@ -185,7 +185,7 @@
                      completion:nil];
 }
 
-- (void)selectDeselect:(UIButton *)button
+- (void)invertSelection:(UIButton *)button
 {
     UIColor *newColor;
     if(button.layer.backgroundColor == self.green.CGColor)
@@ -204,6 +204,14 @@
         
 }
 
+- (void)deselect:(UIButton *)button
+{
+    UIColor *newColor = [UIColor whiteColor];
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{ button.layer.backgroundColor = newColor.CGColor;}
+                     completion:nil];
+}
+
 - (IBAction)checkAnswer:(id)sender {
     CGSize viewSize = self.view.frame.size;
 
@@ -211,12 +219,12 @@
     
     if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
         [resultAnswerPopUpView initWithResult:TRUE];
-        self.rightAnswers++;
+        self.rightAnswers = [NSNumber numberWithInt:self.rightAnswers.intValue + 1];
         self.rightAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.rightAnswers];
     }
     else{
         [resultAnswerPopUpView initWithResult:FALSE];
-        self.wrongAnswers++;
+        self.wrongAnswers = [NSNumber numberWithInt:self.wrongAnswers.intValue + 1];
         self.wrongAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.wrongAnswers];
     }
     
@@ -243,9 +251,19 @@
 }
 
 - (IBAction)clickOnAnswer:(id)sender {
+    if(![sender isEqual:self.chosenAnswer])
+        [self deselectAll];
     // Button Animation
-    [self selectDeselect:(UIButton*) sender];
+    [self invertSelection:(UIButton*) sender];
     self.chosenAnswer = (UIButton*) sender;
+}
+
+- (void)deselectAll
+{
+    [self deselect:self.answerAButton];
+    [self deselect:self.answerBButton];
+    [self deselect:self.answerCButton];
+    [self deselect:self.answerDButton];
 }
 
 - (void)removeSubviews

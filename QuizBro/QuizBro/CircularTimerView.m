@@ -132,9 +132,10 @@
 
 - (void)drawRect:(CGRect)rect
 {
-//    if (self.running == NO) {
-//        return;
-//    }
+    if (self.running == NO) {
+        // QuizBro Code
+        [self.board timeOut];
+    }
     
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval finSecs = [self.finalDate timeIntervalSince1970];
@@ -253,8 +254,6 @@
         if (self.endBlock != nil) {
             self.endBlock(self);
         }
-        // QuizBro Code
-        [self.board timeOut];
         return;
     }
 }
