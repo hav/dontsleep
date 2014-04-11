@@ -12,7 +12,7 @@
 #import "BoardAnimations.h"
 #import "GameViewController.h"
 #import "DataManager.h"
-#import "CircularTimer.h"
+#import "CircularTimerView.h"
 
 
 
@@ -22,7 +22,7 @@
 @property (nonatomic)  NSNumber* wrongAnswers;
 @property (nonatomic) UIColor* yellow;
 @property (nonatomic) UIColor* green;
-@property (nonatomic, weak) CircularTimer *circularTimer;
+@property (nonatomic) CircularTimerView *circularTimer;
 
 @end
 
@@ -91,6 +91,7 @@
 
 - (void)updateUI
 {
+    // Set Up Border
     self.view.layer.borderWidth = 1;
     self.view.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.view.layer.cornerRadius = 8;
@@ -141,7 +142,7 @@
 
 - (void)loadNewAnswer{
     
-    [self initTimer];
+    [self initTimerWithTime:2];
 
     self.answerAButton.backgroundColor = [UIColor whiteColor];
     self.answerBButton.backgroundColor = [UIColor whiteColor];
@@ -207,6 +208,7 @@
 
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
+    [self.circularTimer stop];
     [BoardAnimations fadeButton:(UIButton*) sender];
     [self loadNewAnswer];
 }
@@ -237,55 +239,64 @@
         {
             [subView removeFromSuperview];
         }
-        else if([subView isKindOfClass:[CircularTimer class]]){
-            [((CircularTimer *)subView) stop];
+        else if([subView isKindOfClass:[CircularTimerView class]]){
+            [((CircularTimerView *)subView) stop];
             [subView removeFromSuperview];
         }
     }
 }
 
-- (void)initTimer
+- (void)initTimerWithTime:(int)seconds
 {
     // Remove the last view
     for (UIView *subView in self.view.subviews)
     {
-        if ([subView isKindOfClass:[CircularTimer class]])
+        if ([subView isKindOfClass:[CircularTimerView class]])
         {
-            [((CircularTimer *)subView) stop];
+            [((CircularTimerView *)subView) stop];
             [subView removeFromSuperview];
         }
     }
     
-    NSDate *initialDate = [NSDate date];
-    NSDate *finalDate = [NSDate dateWithTimeInterval:5 sinceDate:initialDate];
+    self.circularTimer = [[CircularTimerView alloc] initWithPosition:CGPointMake(410.0f, 20.0f)
+                                                              radius:20
+                                                      internalRadius:15];
     
-    self.circularTimer = [[CircularTimer alloc] initWithPosition:CGPointMake(410.0f, 20.0f)
-                                                          radius:20
-                                                  internalRadius:15
-                                               circleStrokeColor:[UIColor whiteColor]
-                                         activeCircleStrokeColor:self.green
-                                                     initialDate:initialDate
-                                                       finalDate:finalDate
-                          
-                                                   startCallback:^{
-                                                   }
-                                                    endCallback:^{
-                                                        [self timeOut];
-                                                     }];
+    self.circularTimer.backgroundColor = [UIColor lightGrayColor];
+    self.circularTimer.backgroundFadeColor = [UIColor lightGrayColor];
+    self.circularTimer.foregroundColor = self.green;
+    self.circularTimer.foregroundFadeColor = self.green;
+    self.circularTimer.direction = CircularTimerViewDirectionClockwise;
+    self.circularTimer.font = [UIFont systemFontOfSize:9];
+    
+    self.circularTimer.frameBlock = ^(CircularTimerView *circularTimerView){
+        circularTimerView.text = [NSString stringWithFormat:@"%d", (int) [circularTimerView runningElapsedTime] + 1];
+    };
+    
+    [self.circularTimer setupCountdown:seconds];
+    
+    self.circularTimer.startBlock = ^(CircularTimerView *circularTimerView){
+    };
+    self.circularTimer.endBlock = ^(CircularTimerView *circularTimerView){
+        [self timeOut];
+    };
+    
     
     [self.view addSubview:self.circularTimer];
 }
 
 - (void)timeOut
 {
-    CGSize viewSize = self.view.frame.size;
-    TimeOutPopUpView *timeOutPopUpView = [[TimeOutPopUpView alloc]
-                                          initWithFrame:
-                                          CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
-    [BoardAnimations animatePopupwith:timeOutPopUpView on:self.view];
-    self.checkButton.alpha = 0;
-    self.skipButton.alpha = 0;
-    [BoardAnimations fadeIn:self.nextQuestionButton];
+    if(![self.circularTimer isRunning]){
+        CGSize viewSize = self.view.frame.size;
+        TimeOutPopUpView *timeOutPopUpView = [[TimeOutPopUpView alloc]
+                                              initWithFrame:
+                                              CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
+        [BoardAnimations animatePopupwith:timeOutPopUpView on:self.view];
+        self.checkButton.alpha = 0;
+        self.skipButton.alpha = 0;
+        [BoardAnimations fadeIn:self.nextQuestionButton];
+    }
 }
 
 

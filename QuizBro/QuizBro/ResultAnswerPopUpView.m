@@ -9,11 +9,30 @@
 #import "ResultAnswerPopUpView.h"
 
 @interface ResultAnswerPopUpView()
-
+@property (nonatomic) UIColor* yellow;
+@property (nonatomic) UIColor* green;
 @property (nonatomic) UILabel *textLabel;
 @end
 
 @implementation ResultAnswerPopUpView
+
+- (UIColor*)green
+{
+    if(!_green)
+    {
+        _green = [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
+    }
+    return _green;
+}
+
+- (UIColor*)yellow
+{
+    if(!_yellow)
+    {
+        _yellow = [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
+    }
+    return _yellow;
+}
 
 - (UILabel *)textLabel {
     if (!_textLabel) {
@@ -42,13 +61,13 @@
     
     if(result){
         [self setText:@"Correct answer!"];
-        [self setBackgroundColor:[UIColor greenColor]];
-        self.layer.borderColor = [UIColor greenColor].CGColor;
+        [self setBackgroundColor:self.green];
+        self.layer.borderColor = self.green.CGColor;
     }
     else{
         [self setText:@"Wrong answer!"];
-        [self setBackgroundColor:[UIColor redColor]];
-        self.layer.borderColor = [UIColor redColor].CGColor;
+        [self setBackgroundColor:self.yellow];
+        self.layer.borderColor = self.yellow.CGColor;
     }
 }
 

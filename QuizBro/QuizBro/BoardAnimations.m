@@ -11,9 +11,6 @@
 
 @interface BoardAnimations()
 
-@property (nonatomic) UIColor* yellow;
-@property (nonatomic) UIColor* green;
-
 @end
 
 @implementation BoardAnimations
