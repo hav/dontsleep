@@ -175,6 +175,7 @@
 }
 
 - (IBAction)checkAnswer:(id)sender {
+    [self.circularTimer stop];
     CGSize viewSize = self.view.frame.size;
 
     ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
@@ -195,7 +196,6 @@
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
     [BoardAnimations fadeIn:self.nextQuestionButton];
-    [self.circularTimer stop];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
