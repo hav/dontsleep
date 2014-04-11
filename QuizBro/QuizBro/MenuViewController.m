@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL animating;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic) NSString* questionMarkText;
 
 @end
 
@@ -29,34 +30,45 @@
     [self performSelectorInBackground:@selector(animationLoop) withObject:nil];
 }
 
+- (NSString *)questionMarkText
+{
+    if (!_questionMarkText){
+        _questionMarkText = @"?";
+    }
+    return _questionMarkText;
+}
+
 - (void)animationLoop
 {
     while(self.animating)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize size = self.view.bounds.size;
-            int x = [self randomIntBetween:30 and:size.width];
-            int y = -30;
+            int x = [self randomIntBetween:0 and:size.width];
+            int y = 0;
 
-            UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 30, 30)];
-            questionMark.text = @"?";
+            UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 70, 70)];
+            questionMark.text = self.questionMarkText;
             
             questionMark.textAlignment = NSTextAlignmentCenter;
             NSMutableAttributedString *atbQuestionText = [[NSMutableAttributedString alloc] initWithString:questionMark.text];
             [atbQuestionText addAttribute:NSFontAttributeName
                                     value:[UIFont systemFontOfSize:[self randomIntBetween:12 and:24]]
                                     range:NSMakeRange(0, questionMark.text.length)];
-            [questionMark setAttributedText:atbQuestionText.copy];
             questionMark.alpha = 0.5;
             
 //            If we want it green, like in the matrix!
-//            questionMark.attributedText = [[NSAttributedString alloc] initWithString:@"?" attributes:@{NSForegroundColorAttributeName : [UIColor greenColor]}];
+//            [atbQuestionText addAttribute:NSForegroundColorAttributeName
+//                                    value:[UIColor greenColor]
+//                                    range:NSMakeRange(0,questionMark.text.length)];
+            
+            [questionMark setAttributedText:atbQuestionText.copy];
             [self.view addSubview:questionMark];
             
             [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
                                  questionMark.alpha = 0.1;
-                                 questionMark.frame = CGRectMake(x,size.height + 30,30, 30);
+                                 questionMark.frame = CGRectMake(x,size.height + 30,70, 70);
                              }
                              completion:nil];
         });
@@ -90,6 +102,13 @@
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ self.startButton.alpha = 1;}
                      completion:nil];
+}
+- (IBAction)secretQPressed:(id)sender {
+    self.questionMarkText = @"?";
+}
+
+- (IBAction)secretOPressed:(id)sender {
+    self.questionMarkText = @"Bro";
 }
 
 #pragma mark - Navigation

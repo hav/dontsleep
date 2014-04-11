@@ -76,7 +76,7 @@
     popup.alpha = 0;
     
     // Animate & Jump
-    CGFloat offset = .1*(endyPosition - startyPosition);
+    CGFloat offset = .05*(endyPosition - startyPosition);
     
     [UIView animateWithDuration:.3 animations:^{
         CGRect frame = popup.frame;
