@@ -37,13 +37,18 @@
 
 -(void)initWithResult:(BOOL)result
 {
+    self.layer.borderWidth = 1;
+    self.layer.cornerRadius = 8;
+    
     if(result){
         [self setText:@"Correct answer!"];
         [self setBackgroundColor:[UIColor greenColor]];
+        self.layer.borderColor = [UIColor greenColor].CGColor;
     }
     else{
         [self setText:@"Wrong answer!"];
         [self setBackgroundColor:[UIColor redColor]];
+        self.layer.borderColor = [UIColor redColor].CGColor;
     }
 }
 

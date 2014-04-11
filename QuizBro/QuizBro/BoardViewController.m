@@ -11,7 +11,7 @@
 #import "BoardViewController.h"
 #import "GameViewController.h"
 #import "DataManager.h"
-#import "CircularTimerView.h"
+#import "CircularTimer.h"
 
 
 
@@ -21,7 +21,7 @@
 @property (nonatomic)  NSNumber* wrongAnswers;
 @property (nonatomic) UIColor* yellow;
 @property (nonatomic) UIColor* green;
-@property (nonatomic, strong) CircularTimerView *circularTimerView;
+@property (nonatomic, strong) CircularTimer *circularTimer;
 
 @end
 
@@ -233,7 +233,7 @@
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
     [self fadeIn:self.nextQuestionButton];
-    [self.circularTimerView stop];
+    [self.circularTimer stop];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
@@ -273,7 +273,7 @@
     {
         if ([subView isKindOfClass:[TimeOutPopUpView class]] ||
             [subView isKindOfClass:[ResultAnswerPopUpView class]] ||
-            [subView isKindOfClass:[CircularTimerView class]])
+            [subView isKindOfClass:[CircularTimer class]])
         {
             [subView removeFromSuperview];
         }
@@ -285,43 +285,30 @@
     // Remove the last view
     for (UIView *subView in self.view.subviews)
     {
-        if ([subView isKindOfClass:[CircularTimerView class]])
+        if ([subView isKindOfClass:[CircularTimer class]])
         {
             [subView removeFromSuperview];
         }
     }
     
-    self.circularTimerView =
-    [[CircularTimerView alloc] initWithPosition:CGPointMake(410.f, 20.f)
-                                         radius:20
-                                 internalRadius:15
-                                 returnInstance:self];
+    NSDate *initialDate = [NSDate date];
+    NSDate *finalDate = [NSDate dateWithTimeInterval:15 sinceDate:initialDate];
     
-    // Light gray circle
-    self.circularTimerView.backgroundColor = [UIColor lightGrayColor];
-    self.circularTimerView.backgroundFadeColor = [UIColor lightGrayColor];
+    self.circularTimer = [[CircularTimer alloc] initWithPosition:CGPointMake(410.0f, 20.0f)
+                                                          radius:20
+                                                  internalRadius:15
+                                               circleStrokeColor:[UIColor whiteColor]
+                                         activeCircleStrokeColor:self.green
+                                                     initialDate:initialDate
+                                                       finalDate:finalDate
+                          
+                                                   startCallback:^{
+                                                   }
+                                                    endCallback:^{
+                                                        [self timeOut];
+                                                     }];
     
-    // Circle Fade from green to red
-    self.circularTimerView.foregroundColor = [UIColor greenColor];
-    self.circularTimerView.foregroundFadeColor = [UIColor redColor];
-    self.circularTimerView.direction = CircularTimerViewDirectionClockwise;
-    
-    // Text fade from green to red
-    self.circularTimerView.font = [UIFont systemFontOfSize:9];
-    self.circularTimerView.fontColor = [UIColor greenColor];
-    self.circularTimerView.fontFadeColor = [UIColor redColor];
-    
-    // Display seconds - format text here
-    self.circularTimerView.frameBlock = ^(CircularTimerView *circularTimerView){
-        NSTimeInterval elapsed = [circularTimerView runningElapsedTime];
-        NSTimeInterval total = [circularTimerView intervalLength];
-        circularTimerView.text = [NSString stringWithFormat:@"%.0f",total - elapsed];
-    };
-    
-    // 1 minute timer
-    [self.circularTimerView setupCountdown:15];
-    
-    [self.view addSubview:self.circularTimerView];
+    [self.view addSubview:self.circularTimer];
 }
 
 - (void)timeOut
@@ -334,8 +321,7 @@
     [self animatePopupwithView:timeOutPopUpView];
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
-    [self fadeIn:self.nextQuestionButton];
-    
+    [self fadeIn:self.nextQuestionButton];    
 }
 
 - (void)animatePopupwithView:(UIView *)view
