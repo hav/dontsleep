@@ -142,7 +142,7 @@
 
 - (void)loadNewAnswer{
     
-    [self initTimerWithTime:2];
+    [self initTimerWithTime:15];
 
     self.answerAButton.backgroundColor = [UIColor whiteColor];
     self.answerBButton.backgroundColor = [UIColor whiteColor];
