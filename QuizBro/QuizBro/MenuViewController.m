@@ -7,11 +7,12 @@
 //
 
 #import "MenuViewController.h"
+#import "BaseButton.h"
 
 @interface MenuViewController ()
 
 @property (nonatomic) BOOL animating;
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet BaseButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSString* questionMarkText;
 
@@ -45,7 +46,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize size = self.view.bounds.size;
             int x = [self randomIntBetween:0 and:size.width];
-            int y = 0;
+            int y = -40;
 
             UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 70, 70)];
             questionMark.text = self.questionMarkText;
@@ -94,10 +95,6 @@
     
     NSAttributedString* atbString = [[NSAttributedString alloc] initWithString:text attributes:nil];
     [self.startButton setAttributedTitle:atbString forState:UIControlStateNormal];
-    self.startButton.layer.borderWidth = 1;
-    self.startButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.startButton.layer.cornerRadius = 8;
-    self.startButton.layer.masksToBounds = YES;
     
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ self.startButton.alpha = 1;}
