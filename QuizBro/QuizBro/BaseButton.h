@@ -10,4 +10,11 @@
 
 @interface BaseButton : UIButton
 
+- (void)changeBackgroundColor:(UIColor *)color;
+- (void)fadeButton;
+- (void)fadeOut;
+- (void)fadeIn;
+- (void)invertSelectionfromColor:(UIColor *)color;
+- (void)deselect;
+
 @end

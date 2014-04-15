@@ -1,14 +1,14 @@
 //
-//  SkipButton.m
+//  NextQuestionButton.m
 //  QuizBro
 //
 //  Created by Boris Kachscovsky on 4/15/14.
 //  Copyright (c) 2014 quizbro. All rights reserved.
 //
 
-#import "SkipButton.h"
+#import "NextQuestionButton.h"
 
-@implementation SkipButton
+@implementation NextQuestionButton
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,7 +25,7 @@
 {
     [super drawRect:rect];
     // Drawing code
-    [self changeBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f]];
+    [self changeBackgroundColor:[UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f]];
 }
 
 @end

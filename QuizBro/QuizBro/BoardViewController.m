@@ -87,15 +87,6 @@
     self.view.layer.cornerRadius = 8;
     self.view.layer.masksToBounds = YES;
 
-    // Edit Skip Button
-    self.skipButton.layer.backgroundColor = self.yellow.CGColor;
-    self.skipButton.layer.cornerRadius = 8;
-    self.skipButton.layer.masksToBounds = YES;
-    
-    // Edit Check Answer Button
-    self.checkButton.layer.backgroundColor = self.green.CGColor;
-    self.checkButton.layer.cornerRadius = 8;
-    self.checkButton.layer.masksToBounds = YES;
     
     // Edit Next Question Button
     self.nextQuestionButton.layer.borderWidth = 1;
@@ -157,13 +148,13 @@
     
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
-    [BoardAnimations fadeIn:self.nextQuestionButton];
+    [self.nextQuestionButton fadeIn];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
     self.nextQuestionButton.alpha = 0;
-    [BoardAnimations fadeIn:self.checkButton];
-    [BoardAnimations fadeIn:self.skipButton];
+    [self.checkButton fadeIn];
+    [self.skipButton fadeIn];
     [self removeSubviews];
     [self loadNewAnswer];
 }
@@ -171,7 +162,7 @@
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
     [self.circularTimer stop];
-    [BoardAnimations fadeButton:(UIButton*) sender];
+    [(BaseButton*) sender fadeButton];
     [self loadNewAnswer];
 }
 
@@ -179,16 +170,16 @@
     if(![sender isEqual:self.chosenAnswer])
         [self deselectAll];
     // Button Animation
-    [BoardAnimations invertSelection:(UIButton*) sender fromColor:self.green];
+    [(BaseButton*)sender invertSelectionfromColor:self.green];
     self.chosenAnswer = (UIButton*) sender;
 }
 
 - (void)deselectAll
 {
-    [BoardAnimations deselect:self.answerAButton];
-    [BoardAnimations deselect:self.answerBButton];
-    [BoardAnimations deselect:self.answerCButton];
-    [BoardAnimations deselect:self.answerDButton];
+    [self.answerAButton deselect];
+    [self.answerBButton deselect];
+    [self.answerCButton deselect];
+    [self.answerCButton deselect];
 }
 
 - (void)removeSubviews
