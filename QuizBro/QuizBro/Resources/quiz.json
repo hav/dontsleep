@@ -1,180 +1,1328 @@
-[{
-    "identifier": 0,
-    "questionText": "Question 1?",
-    "answers" : [
-                    {
-                        "identifier": 0,
-                        "answerText": "Correct",
-                        "correctAnswer": true
-                    },
-                    {
-                        "identifier": 1,
-                        "answerText": "Incorrect",
-                        "correctAnswer": false
-                    },
-                    {
-                        "identifier": 2,
-                        "answerText": "Incorrect",
-                        "correctAnswer": false
-                    },
-                    {
-                        "identifier": 3,
-                        "answerText": "incorrect",
-                        "correctAnswer": false
-                    }
-                ]
-},
-{
-    "identifier": 1,
-    "questionText": "Question 2?",
-    "answers" : [{
-                    "identifier": 0,
-                    "answerText": "Incorrect",
-                    "correctAnswer": false
-                },
-                {
-                    "identifier": 1,
-                    "answerText": "Incorrect",
-                    "correctAnswer": false
-                },
-                {
-                    "identifier": 2,
-                    "answerText": "Correct",
-                    "correctAnswer": true
-                },
-                {
-                    "identifier": 3,
-                    "answerText": "Incorrect",
-                    "correctAnswer": false
-                }
-            ]
-},
- {
- "identifier": 2,
- "questionText": "Question 3?",
- "answers" : [{
-              "identifier": 0,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 1,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 2,
-              "answerText": "Inorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 3,
-              "answerText": "Correct",
-              "correctAnswer": true
-              }
-              ]
- },
-{
-    "identifier": 3,
- "questionText": "Question 4?",
-    "answers" : [
-                    {
-                        "identifier": 0,
-                        "answerText": "Incorrect",
-                        "correctAnswer": false
-                    },
-                    {
-                        "identifier": 1,
-                        "answerText": "Incorrect",
-                        "correctAnswer": false
-                    },
-                    {
-                        "identifier": 2,
-                        "answerText": "Incorrect",
-                        "correctAnswer": false
-                    },
-                    {
-                        "identifier": 3,
-                        "answerText": "Correct",
-                        "correctAnswer": true
-                    }
-                ]
-},
- {
- "identifier": 4,
- "questionText": "Question 5?",
- "answers" : [
-              {
-              "identifier": 0,
-              "answerText": "Correct",
-              "correctAnswer": true
-              },
-              {
-              "identifier": 1,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 2,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 3,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              }
-              ]
- },
-{
-    "identifier": 5,
- "questionText": "Question 6?",
- "answers" : [
-              {
-              "identifier": 0,
-              "answerText": "Correct",
-              "correctAnswer": true
-              },
-              {
-              "identifier": 1,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 2,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 3,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              }
-              ]
- },
-{
-    "identifier": 6,
- "questionText": "Question 7?",
- "answers" : [
-              {
-              "identifier": 0,
-              "answerText": "Correct",
-              "correctAnswer": true
-              },
-              {
-              "identifier": 1,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 2,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              },
-              {
-              "identifier": 3,
-              "answerText": "Incorrect",
-              "correctAnswer": false
-              }
-              ]
- }]
+[
+	{
+		"identifier": 0,
+		"questionText": "Who is Reginald Dwight better known as?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Elton John",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Michael Jackson",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Michael Jordan",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Ben Elton",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 1,
+		"questionText": "Name the king who failed to keep an eye on things at the battle of Hastings?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "King Hasting III",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Harold",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Trischian Handeimer",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Karl XVI Gustaf",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 2,
+		"questionText": "In which sport would you use a chucker?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Quidditch",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Cricket",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Polo",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Soccer",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 3,
+		"questionText": "What is the capital of the Falkland Islands?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Pandora",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Washington",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Falktown",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Port Stanley",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 4,
+		"questionText": "Name the actor who played Lovejoy?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Ian Macshane",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Chrisheim Danian",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Ashton Kutcher",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "James Franco",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 5,
+		"questionText": "Fruit, pipistrol, and horseshoe are all types of what?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Mats",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Bats",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Fats",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Chairs",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 6,
+		"questionText": "If a snail climbed up a 12 ft wall at a steady rate of 3 feet a day, but slipped down a 2ft every night, how many days would it take him to reach the top?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": ">9000 days",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "1 day",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "10 days",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "20 days",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 7,
+		"questionText": "What is the square root of 361?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "20",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "36.1",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": ">9000",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "19",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 8,
+		"questionText": "Name the captain of the Nautilus in Jules Vernes' 20,0000 leagues under the sea?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Nemo",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Dory",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Bruce",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Marlin",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 9,
+		"questionText": "When told that the people had no bread, what was Marie Antionette`s reply?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "'To be or not to be'",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "'Let them eat cake'",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "'Produce flour and they shall be fed'",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "'I do not care for that'",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 10,
+		"questionText": "What is a fandango?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "A grim",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "An indie record",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "A dance",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "A sabre",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 11,
+		"questionText": "Traditionally, what type of wood do Rolls Royce put on the dashboards of their cars?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Marble",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Oak",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Fancywood",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Walnut",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 12,
+		"questionText": "How many vowels are there in the word unprepossessing?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "5",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "15",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "10",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": ">9000",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 13,
+		"questionText": "What do the letters Y.M.C.A. stand for?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Yet More Christian Animals",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Young Mens Christian Association",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Yummy Mermaid Chili Aperitif",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "You'll Munch Carrot Alone",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 14,
+		"questionText": "In which country is the state of Tobasco?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Chile",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Chili",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Mexico",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "USA",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 15,
+		"questionText": "What sport features sails, wishbone booms, and universal joints?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Polo",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Dragracing",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Snail racing",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Wind surfing",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 16,
+		"questionText": "Who wrote A Tale Of Two Cities?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Charles Dickens",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Boris Kardashian",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Shakespeare",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Kanye Phurrdále",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 17,
+		"questionText": "What is the national emblem of Canada?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Elk",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Maple leaf",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Cannabis leaf",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Pancake syrup",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 18,
+		"questionText": "Name the clockwork devices used by musicians to measure time?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Watch",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Tic-toc",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Metronome",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Black board",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 19,
+		"questionText": "The cassowary and Emu are both flightless birds of which country?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Canada",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Russia",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "North Korea",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Australia",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 20,
+		"questionText": "Free Willy was a film about what?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "A whale",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Sex shop",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "A documentary of the harsh realities of living in a sex utopia",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "A boy raised by dolphins",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 21,
+		"questionText": "According to legend who flew too close to the sun, melting the wax on his wings?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Hercules",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Icarus",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Hybris",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Jesus",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 22,
+		"questionText": "How many rings are in the symbol of the Olympic Games?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": ">9000",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "7",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "5",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Ask Russia",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 23,
+		"questionText": "What name is given to a 70th wedding anniversary?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Plutonium",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Silver",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Gold",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Platinum",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 24,
+		"questionText": "What word is used to describe the tiny animals and plants that live in the surface water of seas and lakes?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Plankton",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Whales",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Organisms",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Brickton",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 25,
+		"questionText": "What sort of wood is used to make the black keys on a piano keyboard?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Redwood",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Ebony",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Marble",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Oak",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 26,
+		"questionText": "Which Band have released albums called 'The dark side of the moon', and 'Wish you were here'?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Abba",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Led Zeppelin",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Pink Floyd",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Moody Blues",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 27,
+		"questionText": "What sort of plant is a truffle?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Chocolate",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Marijuana",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Root vegetable",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Fungus",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 28,
+		"questionText": "Name the man who has the most monuments erected in his honour?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Buddha",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Erect hehehehe",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Josef Stalin",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Steve Jobs",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 29,
+		"questionText": "Who painted the Mona Lisa?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Boris Sebastian Kach",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Leonardo da Vinci",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Vincent van Gogh",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Rembrandt",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 30,
+		"questionText": "Name the two oceans which meet at the Cape of Good Hope?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Pacific, Arctic",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Atlantic, Mediterranean",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Atlantic, Indian",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Pacific, Southern",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 31,
+		"questionText": "Which sport requires the competitors to throw stones at houses?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Monopoly",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Baseball",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Soccer",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Curling",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 32,
+		"questionText": "What is the most north westerly letter on a standard typewriter keyboard?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Q",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "€",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "U",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "W",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 33,
+		"questionText": "In the Star Wars trilogy who turns out to be Luke's father?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Jar Jar Binks",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Darth Vader",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Tom Jerries",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Jabba the Hutt",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 34,
+		"questionText": "Which character has been played by Roger Moore, George Lazenby, and David Niven?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Jerry Tomson",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Steve Jobs",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "James Bond",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Pink Panther",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 35,
+		"questionText": "Name the first non-human to win an Oscar?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Kristian Oscar Fanhejmar",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Homer Simpson",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Michael Jackson",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Mickey mouse",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 36,
+		"questionText": "Name the singer who had a hit with a song about a rat called Ben?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Michael Jackson",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Tom Jerry",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Frank Sinatra",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Bori Kalashnikov",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 37,
+		"questionText": "What is the name or term used to describe -273 deg centigrade?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "The heart temperature of your ex",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Absolute zero",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Polar bear",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Freezing point of mercury",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 38,
+		"questionText": "Name the first bridge built across the Thames at London?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Tower Bridge",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Blackfriars Bridge",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "London Bridge",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Waterloo Bridge",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 39,
+		"questionText": "Who composed 'The flight of the bumble bee'?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Johann Sebastian Bach",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Kristihann Damheiner",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Wolfgang Amadeus Mozart",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Rimsky Korsacov",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 40,
+		"questionText": "What do the numbers 2, 3, 5, 7, 11 and 13 all have in common?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "All Prime numbers",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Players in Manchester United",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Even numbers",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "2^x + 1",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 41,
+		"questionText": "Where is the sun in relation to someone who is looking at a rainbow?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Under them",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Behind them",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "In front of them",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "To the right 37 degrees up from the horizon",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 42,
+		"questionText": "What chess-piece must move in an L shape?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Rook",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "King",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Knight",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Bishop",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 43,
+		"questionText": "Where do Batman and Robin do their crime fighting?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Stockholm",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "San Diego",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Chicago",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Gotham City",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 44,
+		"questionText": "Name the fungus used in the bread making process?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Yeast",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Feet",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Mold",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Colo colui cultum",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 45,
+		"questionText": "What colour is the precious stone amethyst?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Pink/red",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Violet/blue",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Black/green",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Turqoise",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 46,
+		"questionText": "On which part of the body is your skin the thickest?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Your back",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Your thighs",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Your feet",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Your bum",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 47,
+		"questionText": "Who, according to legend, is the Scandinavian God of all gods?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Loki",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Freya",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Thor",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Odin",
+				"correctAnswer": true
+			}
+		]
+	},
+	{
+		"identifier": 48,
+		"questionText": "What are Corinth, Tuscan, and Doric styles of?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Architecture",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 1,
+				"answerText": "Dance",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Cooking",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Horse riding",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 49,
+		"questionText": "Which of the following is the closest city to London?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Paris",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Brussels",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 2,
+				"answerText": "Amsterdam",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 3,
+				"answerText": "Glasgow",
+				"correctAnswer": false
+			}
+		]
+	},
+	{
+		"identifier": 50,
+		"questionText": "Which motor manufacturer makes the Clio, Chamade and Safrane?",
+		"answers": [
+			{
+				"identifier": 0,
+				"answerText": "Mercedes",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 1,
+				"answerText": "Toyota",
+				"correctAnswer": false
+			},
+			{
+				"identifier": 2,
+				"answerText": "Renault",
+				"correctAnswer": true
+			},
+			{
+				"identifier": 3,
+				"answerText": "Porche",
+				"correctAnswer": false
+			}
+		]
+	}
+]
