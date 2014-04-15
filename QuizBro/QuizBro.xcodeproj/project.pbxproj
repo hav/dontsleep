@@ -22,7 +22,6 @@
 		E8BA3C4118E98A6800D4B278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C4018E98A6800D4B278 /* main.m */; };
 		E8BA3C4518E98A6800D4B278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C4418E98A6800D4B278 /* AppDelegate.m */; };
 		E8BA3C4818E98A6800D4B278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BA3C4618E98A6800D4B278 /* Main.storyboard */; };
-		E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3C4A18E98A6800D4B278 /* ViewController.m */; };
 		E8BA3C5418E98A6800D4B278 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C5318E98A6800D4B278 /* XCTest.framework */; };
 		E8BA3C5518E98A6800D4B278 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3418E98A6800D4B278 /* Foundation.framework */; };
 		E8BA3C5618E98A6800D4B278 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BA3C3818E98A6800D4B278 /* UIKit.framework */; };
@@ -75,8 +74,6 @@
 		E8BA3C4318E98A6800D4B278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8BA3C4418E98A6800D4B278 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E8BA3C4718E98A6800D4B278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8BA3C4918E98A6800D4B278 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E8BA3C4A18E98A6800D4B278 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E8BA3C5218E98A6800D4B278 /* QuizBroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizBroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BA3C5318E98A6800D4B278 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E8BA3C5B18E98A6800D4B278 /* QuizBroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuizBroTests-Info.plist"; sourceTree = "<group>"; };
@@ -176,8 +173,6 @@
 				E8BA3C4618E98A6800D4B278 /* Main.storyboard */,
 				31A2FA5A18F57EE100856C50 /* MenuViewController.h */,
 				31A2FA5B18F57EE100856C50 /* MenuViewController.m */,
-				E8BA3C4918E98A6800D4B278 /* ViewController.h */,
-				E8BA3C4A18E98A6800D4B278 /* ViewController.m */,
 				31A2FA5918F57C4200856C50 /* CircularTimerView */,
 				E8BA3CA018E99B0000D4B278 /* GameModel */,
 				E8BA3C7718E9914C00D4B278 /* Model */,
@@ -345,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91674EA118F5731300A85AB9 /* ResultAnswerPopUpView.m in Sources */,
-				E8BA3C4B18E98A6800D4B278 /* ViewController.m in Sources */,
 				910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */,
 				91674EA718F5832000A85AB9 /* TimeOutPopUpView.m in Sources */,
 				910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */,

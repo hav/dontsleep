@@ -8,13 +8,13 @@
 
 #import "BaseModel.h"
 #import "DataManager.h"
-#import "AppDelegate.h"
 
 #import "Question.h"
 #import "Answer.h"
 
 @interface BaseModel()
 
+@property (nonatomic, strong) BoardViewController *boardViewController;
 @property (nonatomic, strong) NSMutableArray *questions;
 @property (nonatomic, strong) Question *currentQuestion;
 @property (nonatomic, strong) Answer *currentCorrectAnswer;
@@ -24,6 +24,19 @@
 @end
 
 @implementation BaseModel
+
+- (id)initWithViewController:(BoardViewController *)viewController {
+    self = [super init];
+    
+    if (self) {
+        self.boardViewController = viewController;
+    }
+    
+    return self;
+}
+
+
+#pragma mark - Questions
 
 - (Question *)fetchRandomQuestion {
     Question *randomQuestion;
@@ -90,6 +103,8 @@ static const int WRONG_ANSWER_PENALTY = 1;
     
     return [dict copy];
 }
+
+#pragma mark - Score
 
 - (NSInteger *) getScore{
     return self.myScore;

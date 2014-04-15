@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class BoardViewController;
+
 @protocol BaseModelProtocol <NSObject>
 
 
@@ -15,11 +17,12 @@
 
 @interface BaseModel : NSObject
 
+- (id)initWithViewController:(BoardViewController *)viewController;
 - (BOOL)didSelectAnswer:(NSString *)answerText;
 - (NSDictionary *)randomQuestionAndAnswers;
 
 - (NSInteger *)getScore;
 
-@property (nonatomic, strong) id<BaseModelProtocol> delegate;
+@property (nonatomic, strong) id<BaseModelProtocol> gameDelegate;
 
 @end

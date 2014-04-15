@@ -14,8 +14,6 @@
 #import "DataManager.h"
 #import "CircularTimerView.h"
 
-
-
 @interface BoardViewController ()
 
 @property (nonatomic)  NSNumber* rightAnswers;
@@ -83,7 +81,7 @@
 
 - (BaseModel *)baseModel {
     if (!_baseModel) {
-        _baseModel = [[BaseModel alloc] init];
+        _baseModel = [[BaseModel alloc] initWithViewController:self];
     }
     
     return _baseModel;
@@ -297,6 +295,12 @@
         self.skipButton.alpha = 0;
         [BoardAnimations fadeIn:self.nextQuestionButton];
     }
+}
+
+#pragma mark - Model methods
+
+- (void)addDelegateForModel:(GameViewController *)delegateController {
+    self.baseModel.gameDelegate = delegateController;
 }
 
 

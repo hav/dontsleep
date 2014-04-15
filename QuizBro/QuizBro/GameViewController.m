@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "BoardViewController.h"
 
 @interface GameViewController ()
 
@@ -15,7 +16,6 @@
 @implementation GameViewController
 
 -(void)deviceRotated:(NSNotification *)note{
-    
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     CGFloat rotationAngleLeft = M_PI;
     CGFloat rotationAngleRight = 0;
@@ -26,11 +26,22 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceRotated:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
+
+
 -(void)viewDidUnload{
     [super viewDidUnload];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)addChildViewController:(UIViewController *)childController {
+    [super addChildViewController:childController];
+    
+    if ([childController isKindOfClass:[BoardViewController class]]) {
+        [((BoardViewController *)childController) addDelegateForModel:self];
+    }
 }
 
 

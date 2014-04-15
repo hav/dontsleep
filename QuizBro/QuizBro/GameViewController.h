@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseModel.h"
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController <BaseModelProtocol>
 
 @property (weak, nonatomic) IBOutlet UIView *leftContainer;
 @property (weak, nonatomic) IBOutlet UIView *rightContainer;

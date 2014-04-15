@@ -10,13 +10,13 @@
 #import "Question.h"
 #import "BaseModel.h"
 
+@class GameViewController;
+
 
 @interface BoardViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *wrongAnswersText;
 @property (weak, nonatomic) IBOutlet UILabel *rightAnswersText;
-
-
 
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *answerAButton;
@@ -33,5 +33,6 @@
 @property (retain, nonatomic) UIButton* chosenAnswer;
 
 - (void)timeOut;
+- (void)addDelegateForModel:(GameViewController *)delegateController;
 
 @end
