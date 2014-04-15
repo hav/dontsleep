@@ -106,7 +106,7 @@
     self.checkButton.layer.backgroundColor = self.green.CGColor;
     self.checkButton.layer.cornerRadius = 8;
     self.checkButton.layer.masksToBounds = YES;
-        
+    
     // Edit Next Question Button
     self.nextQuestionButton.layer.borderWidth = 1;
     self.nextQuestionButton.layer.borderColor = self.green.CGColor;
