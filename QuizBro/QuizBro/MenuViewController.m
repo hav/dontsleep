@@ -15,17 +15,23 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSString* questionMarkText;
 
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton1;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton2;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton3;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton4;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton5;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton6;
+@property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
+@property (weak, nonatomic) IBOutlet UIButton *twoPlayerButton;
+@property (weak, nonatomic) IBOutlet UIButton *onePlayerButton;
+@property (nonatomic) BOOL singlePlayerGame;
+
 @end
 
 @implementation MenuViewController
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
-    [self performSelector:@selector(displayStartButton:)
-               withObject:@"Start"
-               afterDelay:0.5];
-    
     self.animating = YES;
     [self performSelectorInBackground:@selector(animationLoop) withObject:nil];
 }
@@ -109,6 +115,33 @@
 
 - (IBAction)secretOPressed:(id)sender {
     self.questionMarkText = @"Bro";
+}
+
+- (IBAction)onePlayerPressed:(id)sender {
+    self.singlePlayerGame = TRUE;
+    [self hideChoosePlayersAndShowOptions];
+}
+
+- (IBAction)twoPlayerPressed:(id)sender {
+    self.singlePlayerGame = FALSE;
+    [self hideChoosePlayersAndShowOptions];
+}
+
+- (void)hideChoosePlayersAndShowOptions{
+    [self.onePlayerButton setAlpha:0];
+    [self.twoPlayerButton setAlpha:0];
+    
+    [self.categoryButton1 setAlpha:1];
+    [self.categoryButton2 setAlpha:1];
+    [self.categoryButton3 setAlpha:1];
+    [self.categoryButton4 setAlpha:1];
+    [self.categoryButton5 setAlpha:1];
+    [self.categoryButton6 setAlpha:1];
+    [self.timerPickerView setAlpha:1];
+    
+    [self performSelector:@selector(displayStartButton:)
+               withObject:@"Start"
+               afterDelay:0.5];
 }
 
 #pragma mark - Navigation
