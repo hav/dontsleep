@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseModel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <BaseModelProtocol>
 
 @end
