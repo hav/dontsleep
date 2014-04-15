@@ -175,11 +175,12 @@
 }
 
 - (IBAction)checkAnswer:(id)sender {
-    [self.circularTimer stop];
-    CGSize viewSize = self.view.frame.size;
-
-    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
     
+    [self.circularTimer stop];
+    [self.circularTimer removeFromSuperview];
+    
+    CGSize viewSize = self.view.frame.size;
+    ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
     if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
         [resultAnswerPopUpView initWithResult:TRUE];
         self.rightAnswers = [NSNumber numberWithInt:self.rightAnswers.intValue + 1];
@@ -207,8 +208,9 @@
 }
 
 - (IBAction)skipQuestion:(id)sender {
-    // Button Animation
     [self.circularTimer stop];
+    [self.circularTimer removeFromSuperview];
+    
     [BoardAnimations fadeButton:(UIButton*) sender];
     [self loadNewAnswer];
 }
@@ -249,14 +251,8 @@
 - (void)initTimerWithTime:(int)seconds
 {
     // Remove the last view
-    for (UIView *subView in self.view.subviews)
-    {
-        if ([subView isKindOfClass:[CircularTimerView class]])
-        {
-            [((CircularTimerView *)subView) stop];
-            [subView removeFromSuperview];
-        }
-    }
+    [self.circularTimer stop];
+    [self.circularTimer removeFromSuperview];
     
     self.circularTimer = [[CircularTimerView alloc] initWithPosition:CGPointMake(410.0f, 20.0f)
                                                               radius:20
