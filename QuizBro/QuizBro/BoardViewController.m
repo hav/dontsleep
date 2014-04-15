@@ -106,31 +106,7 @@
     self.checkButton.layer.backgroundColor = self.green.CGColor;
     self.checkButton.layer.cornerRadius = 8;
     self.checkButton.layer.masksToBounds = YES;
-    
-    // Edit Answer A Button
-    self.answerAButton.layer.borderWidth = 1;
-    self.answerAButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerAButton.layer.cornerRadius = 8;
-    self.answerAButton.layer.masksToBounds = YES;
-    
-    // Edit Answer B Button
-    self.answerBButton.layer.borderWidth = 1;
-    self.answerBButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerBButton.layer.cornerRadius = 8;
-    self.answerBButton.layer.masksToBounds = YES;
-    
-    // Edit Answer C Button
-    self.answerCButton.layer.borderWidth = 1;
-    self.answerCButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerCButton.layer.cornerRadius = 8;
-    self.answerCButton.layer.masksToBounds = YES;
-    
-    // Edit Answer D Button
-    self.answerDButton.layer.borderWidth = 1;
-    self.answerDButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerDButton.layer.cornerRadius = 8;
-    self.answerDButton.layer.masksToBounds = YES;
-    
+        
     // Edit Next Question Button
     self.nextQuestionButton.layer.borderWidth = 1;
     self.nextQuestionButton.layer.borderColor = self.green.CGColor;
