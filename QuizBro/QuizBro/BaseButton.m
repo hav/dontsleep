@@ -88,7 +88,7 @@
     UIColor *newColor = [UIColor whiteColor];
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         self.layer.borderColor = newColor.CGColor;
+//                         self.layer.borderColor = newColor.CGColor;
                          self.backgroundColor = newColor;
                          self.layer.backgroundColor = newColor.CGColor;}
                      completion:nil];

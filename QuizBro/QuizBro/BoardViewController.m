@@ -100,7 +100,6 @@
 - (void)loadNewAnswer{
     
     [self initTimerWithTime:15];
-    [self deselectAll];
     
     NSDictionary *question = [self.baseModel randomQuestionAndAnswers];
     
@@ -124,6 +123,7 @@
     [self.answerCButton setTitle:answerC forState:UIControlStateNormal];
     [self.answerDButton setTitle:answerD forState:UIControlStateNormal];
     
+    [self deselectAll];
     
 }
 
@@ -161,6 +161,7 @@
 
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
+    [self deselectAll];
     [self.circularTimer stop];
     [(BaseButton*) sender fadeButton];
     [self loadNewAnswer];
@@ -179,7 +180,7 @@
     [self.answerAButton deselect];
     [self.answerBButton deselect];
     [self.answerCButton deselect];
-    [self.answerCButton deselect];
+    [self.answerDButton deselect];
 }
 
 - (void)removeSubviews
