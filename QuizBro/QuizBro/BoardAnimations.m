@@ -54,7 +54,9 @@
     
     
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.layer.backgroundColor = newColor.CGColor;}
+                     animations:^{
+                         button.backgroundColor = newColor;
+                         button.layer.backgroundColor = newColor.CGColor;}
                      completion:nil];
     
 }
@@ -63,7 +65,9 @@
 {
     UIColor *newColor = [UIColor whiteColor];
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.layer.backgroundColor = newColor.CGColor;}
+                     animations:^{
+                         button.backgroundColor = newColor;
+                         button.layer.backgroundColor = newColor.CGColor;}
                      completion:nil];
 }
 

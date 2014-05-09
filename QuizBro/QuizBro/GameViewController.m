@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "ScoreViewController.h"
 
 @interface GameViewController ()
 
@@ -34,7 +35,14 @@
 }
 
 
-
+- (void)addChildViewController:(UIViewController *)childController {
+    [super addChildViewController:childController];
+    /*
+    if ([childController isKindOfClass:[ScoreViewController class]]) {
+        
+    }
+     */
+}
 
 
 @end

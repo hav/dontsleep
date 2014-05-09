@@ -15,18 +15,31 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSString* questionMarkText;
 
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton1;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton2;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton3;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton4;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton5;
+@property (weak, nonatomic) IBOutlet UIButton *categoryButton6;
+@property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
+
 @end
 
 @implementation MenuViewController
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
-    [self performSelector:@selector(displayStartButton:)
-               withObject:@"Start"
-               afterDelay:0.5];
-    
     self.animating = YES;
+    
+    [self displayButton:self.startButton withText:@"Start" andDelay:0.5];
+    [self displayButton:self.categoryButton1 withText:@"category1" andDelay:0.5];
+    [self displayButton:self.categoryButton2 withText:@"category2" andDelay:0.5];
+    [self displayButton:self.categoryButton3 withText:@"category3" andDelay:0.5];
+    [self displayButton:self.categoryButton4 withText:@"category4" andDelay:0.5];
+    [self displayButton:self.categoryButton5 withText:@"category5" andDelay:0.5];
+    [self displayButton:self.categoryButton6 withText:@"category6" andDelay:0.5];
+    
+    
     [self performSelectorInBackground:@selector(animationLoop) withObject:nil];
 }
 
@@ -101,6 +114,21 @@
     
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ self.startButton.alpha = 1;}
+                     completion:nil];
+}
+
+- (void)displayButton:(UIButton*)button withText:(NSString*)text andDelay:(float)delay{
+    button.alpha = 0;
+    
+    NSAttributedString* atbString = [[NSAttributedString alloc] initWithString:text attributes:nil];
+    [button setAttributedTitle:atbString forState:UIControlStateNormal];
+    button.layer.borderWidth = 1;
+    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    button.layer.cornerRadius = 8;
+    button.layer.masksToBounds = YES;
+    
+    [UIView animateWithDuration:0.3 delay:delay options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{ button.alpha = 1;}
                      completion:nil];
 }
 - (IBAction)secretQPressed:(id)sender {

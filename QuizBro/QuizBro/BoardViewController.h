@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Question.h"
 #import "BaseModel.h"
+#import "AnswerButton.h"
+#import "SkipButton.h"
+#import "NextQuestionButton.h"
+#import "CheckAnswerButton.h"
 
 
 @interface BoardViewController : UIViewController
@@ -19,14 +23,14 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
-@property (weak, nonatomic) IBOutlet UIButton *answerAButton;
-@property (weak, nonatomic) IBOutlet UIButton *answerBButton;
-@property (weak, nonatomic) IBOutlet UIButton *answerCButton;
-@property (weak, nonatomic) IBOutlet UIButton *answerDButton;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerAButton;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerBButton;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerCButton;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerDButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *checkButton;
-@property (weak, nonatomic) IBOutlet UIButton *skipButton;
-@property (weak, nonatomic) IBOutlet UIButton *nextQuestionButton;
+@property (weak, nonatomic) IBOutlet CheckAnswerButton *checkButton;
+@property (weak, nonatomic) IBOutlet SkipButton *skipButton;
+@property (weak, nonatomic) IBOutlet NextQuestionButton *nextQuestionButton;
 
 @property (nonatomic, strong) BaseModel *baseModel;
 

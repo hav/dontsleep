@@ -20,8 +20,6 @@
 
 @property (nonatomic)  NSNumber* rightAnswers;
 @property (nonatomic)  NSNumber* wrongAnswers;
-@property (nonatomic) UIColor* yellow;
-@property (nonatomic) UIColor* green;
 @property (nonatomic) CircularTimerView *circularTimer;
 
 @end
@@ -47,20 +45,12 @@
 
 - (UIColor*)green
 {
-    if(!_green)
-    {
-        _green = [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
-    }
-    return _green;
+    return [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
 }
 
 - (UIColor*)yellow
 {
-    if(!_yellow)
-    {
-        _yellow = [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-    }
-    return _yellow;
+    return [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
 }
 
 - (NSNumber*)rightAnswers
@@ -97,39 +87,6 @@
     self.view.layer.cornerRadius = 8;
     self.view.layer.masksToBounds = YES;
 
-    // Edit Skip Button
-    self.skipButton.layer.backgroundColor = self.yellow.CGColor;
-    self.skipButton.layer.cornerRadius = 8;
-    self.skipButton.layer.masksToBounds = YES;
-    
-    // Edit Check Answer Button
-    self.checkButton.layer.backgroundColor = self.green.CGColor;
-    self.checkButton.layer.cornerRadius = 8;
-    self.checkButton.layer.masksToBounds = YES;
-    
-    // Edit Answer A Button
-    self.answerAButton.layer.borderWidth = 1;
-    self.answerAButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerAButton.layer.cornerRadius = 8;
-    self.answerAButton.layer.masksToBounds = YES;
-    
-    // Edit Answer B Button
-    self.answerBButton.layer.borderWidth = 1;
-    self.answerBButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerBButton.layer.cornerRadius = 8;
-    self.answerBButton.layer.masksToBounds = YES;
-    
-    // Edit Answer C Button
-    self.answerCButton.layer.borderWidth = 1;
-    self.answerCButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerCButton.layer.cornerRadius = 8;
-    self.answerCButton.layer.masksToBounds = YES;
-    
-    // Edit Answer D Button
-    self.answerDButton.layer.borderWidth = 1;
-    self.answerDButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.answerDButton.layer.cornerRadius = 8;
-    self.answerDButton.layer.masksToBounds = YES;
     
     // Edit Next Question Button
     self.nextQuestionButton.layer.borderWidth = 1;
@@ -143,11 +100,6 @@
 - (void)loadNewAnswer{
     
     [self initTimerWithTime:15];
-
-    self.answerAButton.backgroundColor = [UIColor whiteColor];
-    self.answerBButton.backgroundColor = [UIColor whiteColor];
-    self.answerCButton.backgroundColor = [UIColor whiteColor];
-    self.answerDButton.backgroundColor = [UIColor whiteColor];
     
     NSDictionary *question = [self.baseModel randomQuestionAndAnswers];
     
@@ -171,6 +123,7 @@
     [self.answerCButton setTitle:answerC forState:UIControlStateNormal];
     [self.answerDButton setTitle:answerD forState:UIControlStateNormal];
     
+    [self deselectAll];
     
 }
 
@@ -195,21 +148,22 @@
     
     self.checkButton.alpha = 0;
     self.skipButton.alpha = 0;
-    [BoardAnimations fadeIn:self.nextQuestionButton];
+    [self.nextQuestionButton fadeIn];
 }
 
 - (IBAction)nextQuestionPressed:(id)sender {
     self.nextQuestionButton.alpha = 0;
-    [BoardAnimations fadeIn:self.checkButton];
-    [BoardAnimations fadeIn:self.skipButton];
+    [self.checkButton fadeIn];
+    [self.skipButton fadeIn];
     [self removeSubviews];
     [self loadNewAnswer];
 }
 
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
+    [self deselectAll];
     [self.circularTimer stop];
-    [BoardAnimations fadeButton:(UIButton*) sender];
+    [(BaseButton*) sender fadeButton];
     [self loadNewAnswer];
 }
 
@@ -217,16 +171,16 @@
     if(![sender isEqual:self.chosenAnswer])
         [self deselectAll];
     // Button Animation
-    [BoardAnimations invertSelection:(UIButton*) sender fromColor:self.green];
+    [(BaseButton*)sender invertSelectionfromColor:self.green];
     self.chosenAnswer = (UIButton*) sender;
 }
 
 - (void)deselectAll
 {
-    [BoardAnimations deselect:self.answerAButton];
-    [BoardAnimations deselect:self.answerBButton];
-    [BoardAnimations deselect:self.answerCButton];
-    [BoardAnimations deselect:self.answerDButton];
+    [self.answerAButton deselect];
+    [self.answerBButton deselect];
+    [self.answerCButton deselect];
+    [self.answerDButton deselect];
 }
 
 - (void)removeSubviews
