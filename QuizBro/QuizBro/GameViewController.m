@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "BoardViewController.h"
+#import "ScoreViewController.h"
 
 @interface GameViewController ()
 
@@ -19,14 +20,14 @@
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     CGFloat rotationAngleLeft = M_PI;
     CGFloat rotationAngleRight = 0;
-    
+
     self.leftContainer.transform = CGAffineTransformMakeRotation(rotationAngleLeft);
     self.rightContainer.transform = CGAffineTransformMakeRotation(rotationAngleRight);
 }
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceRotated:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
@@ -38,14 +39,21 @@
 
 - (void)addChildViewController:(UIViewController *)childController {
     [super addChildViewController:childController];
-    
+
     if ([childController isKindOfClass:[BoardViewController class]]) {
         [((BoardViewController *)childController) addDelegateForModel:self];
     }
 }
 
 
+- (void)addChildViewController:(UIViewController *)childController {
+    [super addChildViewController:childController];
+    /*
+    if ([childController isKindOfClass:[ScoreViewController class]]) {
 
+    }
+     */
+}
 
 
 @end
