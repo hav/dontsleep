@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 quizbro. All rights reserved.
 //
 
+#define kFirstStart @"firstTime"
+
 #import "AppDelegate.h"
 #import "DataManager.h"
 
@@ -19,10 +21,15 @@
 {
     // Override point for customization after application launch.
     
-    [[DataManager sharedInstance] seedDatabase];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kFirstStart]) {
+        [[DataManager sharedInstance] seedDatabase];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:kFirstStart];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
