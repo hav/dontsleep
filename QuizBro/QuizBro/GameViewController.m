@@ -46,14 +46,4 @@
 }
 
 
-- (void)addChildViewController:(UIViewController *)childController {
-    [super addChildViewController:childController];
-    /*
-    if ([childController isKindOfClass:[ScoreViewController class]]) {
-
-    }
-     */
-}
-
-
 @end

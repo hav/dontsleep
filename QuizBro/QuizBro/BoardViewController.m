@@ -28,9 +28,6 @@
 {
     [super viewDidLoad];
     
-    [[DataManager sharedInstance] seedDatabase];
-    [[DataManager sharedInstance] managedObjectContext];
-    
     self.chosenAnswer = [[UIButton alloc] init];
     
     [self loadNewAnswer];

@@ -96,7 +96,7 @@ static const int WRONG_ANSWER_PENALTY = 1;
     [currentAnswers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [dict setValue:((Answer *)obj).answerText forKey:[NSString stringWithFormat:@"Answer_%d", idx+1]];
         
-        if (((Answer *)obj).correctAnswer) {
+        if ([((Answer *)obj).correctAnswer isEqual:@(YES)]) {
             self.currentCorrectAnswer = obj;
         }
     }];

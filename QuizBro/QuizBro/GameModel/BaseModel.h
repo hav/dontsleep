@@ -12,6 +12,7 @@
 
 @protocol BaseModelProtocol <NSObject>
 
+- (void)board:(BoardViewController *)board didUpdateScore:(int)score;
 
 @end
 
