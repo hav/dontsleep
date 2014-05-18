@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameModel.h"
 
 @class BoardViewController;
 

@@ -59,7 +59,7 @@
     self.scorePointPlayerTwo = 0;
     self.playerOneScore = 0;
     self.playerTwoScore = 0;
-    //[self updateFrames];
+//    [self updateFrames];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -115,7 +115,7 @@
         self.playerTwoScore = score;
     }
     
-    //[self updateFrames];
+//    [self updateFrames];
 }
 
 - (void)setPlayerOneScore:(NSInteger)playerOneScore {
