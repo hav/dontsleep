@@ -10,4 +10,9 @@
 
 @interface ScoreViewController : UIViewController
 
+- (void)addPointPlayerOne;
+- (void)addPointPlayerTwo;
+- (void)removePointPlayerOne;
+- (void)removePointPlayerTwo;
+
 @end

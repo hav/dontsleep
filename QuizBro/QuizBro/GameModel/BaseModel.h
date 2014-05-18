@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameModel.h"
 
 @class BoardViewController;
 
@@ -25,5 +26,6 @@
 - (NSInteger *)getScore;
 
 @property (nonatomic, strong) id<BaseModelProtocol> gameDelegate;
+@property (nonatomic,strong) GameModel* gameModel;
 
 @end

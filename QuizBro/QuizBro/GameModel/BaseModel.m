@@ -78,9 +78,17 @@ static const int WRONG_ANSWER_PENALTY = 1;
 - (BOOL)didSelectAnswer:(NSString *)answerText {
     if ([self.currentCorrectAnswer.answerText isEqualToString:answerText]) {
         self.myScore = self.myScore + CORRECT_ANSWER_BONUS;
+        
+        for (int i = 0; i < CORRECT_ANSWER_BONUS; i++) {
+            [self.gameModel scoreAddedForPlayer:self];
+        }
+        
         return YES;
     }
     
+    for (int i = 0; i < WRONG_ANSWER_PENALTY; i++) {
+        [self.gameModel scoreSubtractedForPlayer:self];
+    }
     self.myScore = self.myScore - WRONG_ANSWER_PENALTY;
     return NO;
 }
