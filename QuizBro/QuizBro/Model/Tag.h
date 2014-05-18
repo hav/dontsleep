@@ -11,6 +11,11 @@
 
 @class Question;
 
+
+/**
+ *  Tag objects were initially going to be used as a form
+ *  of category for the questions, but this idea was scrapped.
+ */
 @interface Tag : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * identifier;

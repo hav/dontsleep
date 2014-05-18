@@ -15,59 +15,11 @@
 
 @implementation BoardAnimations
 
-
-+ (void)fadeButton:(UIButton *)button
-{
-    button.alpha = 0.8;
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.alpha = 1;}
-                     completion:nil];
-}
-
-+ (void)fadeOut:(UIButton *)button
-{
-    button.alpha = 1;
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{ button.alpha = 0;}
-                     completion:nil];
-}
-
 + (void)fadeIn:(UIButton *)button
 {
     button.alpha = 0;
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ button.alpha = 1;}
-                     completion:nil];
-}
-
-+ (void)invertSelection:(UIButton *)button fromColor:(UIColor *)color
-{
-    UIColor *newColor;
-    if(button.layer.backgroundColor == color.CGColor)
-    {
-        newColor = [UIColor whiteColor];
-    }
-    else
-    {
-        newColor = color;
-    }
-    
-    
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         button.backgroundColor = newColor;
-                         button.layer.backgroundColor = newColor.CGColor;}
-                     completion:nil];
-    
-}
-
-+ (void)deselect:(UIButton *)button
-{
-    UIColor *newColor = [UIColor whiteColor];
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         button.backgroundColor = newColor;
-                         button.layer.backgroundColor = newColor.CGColor;}
                      completion:nil];
 }
 

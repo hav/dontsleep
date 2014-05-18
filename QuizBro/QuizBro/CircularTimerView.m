@@ -207,6 +207,7 @@
     [foregroundCircle stroke];
     
     // Text
+    
     if (self.text && self.font) {
         CGSize textSize = [self.text sizeWithFont:self.font];
         CGPoint textCenter = CGPointMake(center.x - textSize.width / 2, center.y - textSize.height / 2);

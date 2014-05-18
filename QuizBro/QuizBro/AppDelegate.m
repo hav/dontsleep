@@ -19,8 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
+    /**
+     *  We check if the application has been started before. If not, we seed the databsae and set a key for next time.
+     */
     if (![[NSUserDefaults standardUserDefaults] objectForKey:kFirstStart]) {
         [[DataManager sharedInstance] seedDatabase];
         [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:kFirstStart];

@@ -8,13 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  A Class containing methods for performing the most commonly used animations in the app.
+ */
 @interface BoardAnimations : NSObject
 
-+ (void)fadeButton:(UIButton *)button;
-+ (void)fadeOut:(UIButton *)button;
+/**
+ *  Fades a button from alpha 0 to 1.
+ *
+ *  @param button The button to fade.
+ */
 + (void)fadeIn:(UIButton *)button;
-+ (void)invertSelection:(UIButton *)button fromColor:(UIColor *)color;
-+ (void)deselect:(UIButton *)button;
+
+/**
+ *  Animates a view popping up inside another view.
+ *
+ *  @param popup The view to animate the popping on.
+ *  @param view  The view to pop inside of.
+ */
 + (void)animatePopupwith:(UIView *)popup on:(UIView *)view;
 
 

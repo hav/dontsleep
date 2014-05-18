@@ -10,7 +10,6 @@
 #import "Answer.h"
 #import "Tag.h"
 
-
 @implementation Question
 
 @dynamic identifier;

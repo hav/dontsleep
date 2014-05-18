@@ -38,6 +38,13 @@
 
 #pragma mark - Questions
 
+/**
+ *  Fetches a random Question from the database.
+ *  Question is guaranteed to not be a previously used one,
+ *  unless all questions have already been used
+ *
+ *  @return A random Question
+ */
 - (Question *)fetchRandomQuestion {
     Question *randomQuestion;
     
@@ -63,6 +70,12 @@
     return randomQuestion;
 }
 
+
+/**
+ *  Allocates empty mutable array
+ *
+ *  @return Empty NSMutableArray
+ */
 - (NSMutableArray *)questions {
     if (!_questions)
     {
