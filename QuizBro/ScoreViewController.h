@@ -12,12 +12,22 @@
 
 @interface ScoreViewController : UIViewController
 
-- (void)addPointPlayerOne;
-- (void)addPointPlayerTwo;
-- (void)removePointPlayerOne;
-- (void)removePointPlayerTwo;
-
+/**
+ *  Change the current score for player.
+ *
+ *  @param board Board of player with new score.
+ *  @param score New score.
+ */
 - (void)adjustScoreFor:(BoardViewController *)board toScore:(NSInteger)score;
+
+/**
+ *  Initialize the Score View Controller and set player one and two properties.
+ *
+ *  @param playerOne Board of player one.
+ *  @param playerTwo Board of player two.
+ *
+ *  @return The Score View Controller (itself).
+ */
 - (id)initWithPlayerOne:(BoardViewController *)playerOne andPlayerTwo:(BoardViewController *)playerTwo;
 
 @end

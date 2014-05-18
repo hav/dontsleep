@@ -16,7 +16,6 @@
 
 @class GameViewController;
 
-
 @interface BoardViewController : UIViewController <BaseModelProtocol>
 
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
@@ -33,7 +32,16 @@
 
 @property (retain, nonatomic) UIButton* chosenAnswer;
 
+/**
+ *  Show timeout popup and show a next question button.
+ */
 - (void)timeOut;
+
+/**
+ *  Add a delegate for a Game View Controller.
+ *
+ *  @param delegateController The Game View Controller.
+ */
 - (void)addDelegateForModel:(GameViewController *)delegateController;
 
 @end

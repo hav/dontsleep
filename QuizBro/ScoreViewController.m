@@ -50,6 +50,9 @@
     return self;
 }
 
+/**
+ *  Set all scores to zero.
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -70,6 +73,11 @@
 
 #pragma mark - Lazy instantiation
 
+/**
+ *  Initialize score view of player one.
+ *
+ *  @return Player one's score view.
+ */
 - (UIView *)playerOneScoreView {
     if (!_playerOneScoreView) {
         _playerOneScoreView = [[UIView alloc] initWithFrame:({
@@ -88,6 +96,11 @@
     return _playerOneScoreView;
 }
 
+/**
+ *  Initialize score view of player two.
+ *
+ *  @return Player two's score view.
+ */
 - (UIView *)playerTwoScoreView {
     if (!_playerTwoScoreView) {
         _playerTwoScoreView = [[UIView alloc] initWithFrame:({
@@ -118,16 +131,29 @@
 //    [self updateFrames];
 }
 
+/**
+ *  Update player one's score label.
+ *
+ *  @param playerOneScore New score for player one.
+ */
 - (void)setPlayerOneScore:(NSInteger)playerOneScore {
     self.playerOneLabel.text = [NSString stringWithFormat:@"%d", playerOneScore];
     _playerOneScore = playerOneScore;
 }
 
+/**
+ *  Update player two's score label.
+ *
+ *  @param playerTwoScore New score for player two.
+ */
 - (void)setPlayerTwoScore:(NSInteger)playerTwoScore {
     self.playerTwoLabel.text = [NSString stringWithFormat:@"%d", playerTwoScore];
     _playerTwoScore = playerTwoScore;
 }
 
+/**
+ *  Animate new score representation.
+ */
 - (void)updateFrames {
     CABasicAnimation *playerOneAnimation = [CABasicAnimation animationWithKeyPath:@"frame.size.height"];
     playerOneAnimation.duration = 0.2;
@@ -144,7 +170,9 @@
 }
 
 
-// Adds a black line in the middle of the view
+/**
+ *  Adds a black line in the middle of the view.
+ */
 - (void)addCenterLine
 {
     UIView *lineView = [[UIView alloc] initWithFrame:({
@@ -159,53 +187,12 @@
     
 }
 
-// Adds a score box for player one.
-- (void)addPointPlayerOne
-{
-    self.scorePointPlayerOne++;
-    UIView *scoreBox = [[UIView alloc] initWithFrame:({
-        CGRect frame = self.view.bounds;
-        frame.size.height = scoreDim;
-        frame.size.width = scoreDim;
-        frame.origin.y = 0;
-        frame.origin.x = 0;
-        frame;
-    })];
-    
-    CGPoint finalOrigin = CGPointMake(widthStartingPosition + scoreDim/2, heightStartingPosition - scoreDim*self.scorePointPlayerOne);
-    scoreBox.backgroundColor = [UIColor greenColor];
-    scoreBox.layer.borderColor = [UIColor blackColor].CGColor;
-    scoreBox.layer.borderWidth = 1.0f;
-    scoreBox.tag = self.scorePointPlayerOne+playerOneTagConstant;
-    
-    [self animateScoreBox:scoreBox toOrigin:finalOrigin];
-}
-
-// Adds a score box for player two.
-- (void)addPointPlayerTwo
-{
-    self.scorePointPlayerTwo++;
-    UIView *scoreBox = [[UIView alloc] initWithFrame:({
-        CGRect frame = self.view.bounds;
-        frame.size.height = scoreDim;
-        frame.size.width = scoreDim;
-        frame.origin.y = self.view.frame.size.height;
-        frame.origin.x = 0;
-        frame;
-    })];
-    
-    CGPoint finalOrigin = CGPointMake(widthStartingPosition + scoreDim/2, heightStartingPosition + scoreDim*(self.scorePointPlayerTwo - 1));
-    scoreBox.backgroundColor = [UIColor redColor];
-    scoreBox.layer.borderColor = [UIColor blackColor].CGColor;
-    scoreBox.layer.borderWidth = 1.0f;
-    scoreBox.tag = self.scorePointPlayerOne+playerTwoTagConstant;
-    
-    [self animateScoreBox:scoreBox toOrigin:finalOrigin];
-}
-
-
-
-// Animates the view to fly in to the target point
+/**
+ *  Animates the view to fly in to the target point.
+ *
+ *  @param view  Score box.
+ *  @param point Target point.
+ */
 - (void)animateScoreBox:(UIView *)view toOrigin:(CGPoint)point
 {
     CGRect newFrame = view.bounds;
@@ -221,23 +208,13 @@
     [self.view addSubview:view];
 }
 
-// Removes the last point from player one
-- (void)removePointPlayerOne
-{
-    UIView *scoreBox = [self viewWithTagNotCountingSelf:(self.scorePointPlayerOne+playerOneTagConstant)];
-    [scoreBox removeFromSuperview];
-    self.scorePointPlayerOne--;
-}
-
-// Removes the last point from player two
-- (void)removePointPlayerTwo
-{
-    UIView *scoreBox = [self viewWithTagNotCountingSelf:(self.scorePointPlayerTwo+playerTwoTagConstant)];
-    [scoreBox removeFromSuperview];
-    self.scorePointPlayerTwo--;
-}
-
-// Find and returns the view with target tag
+/**
+ *  Find and returns the view with target tag.
+ *
+ *  @param tag View tag.
+ *
+ *  @return The view.
+ */
 - (UIView *)viewWithTagNotCountingSelf:(NSInteger)tag
 {
     UIView *toReturn = nil;

@@ -23,6 +23,9 @@
 
 @implementation BoardViewController
 
+/**
+ *  Initialize Chosen Answer property an calls laodNewAnswer
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,12 +35,17 @@
     [self loadNewAnswer];
 }
 
+// Calls updateUI
 - (void)viewWillAppear:(BOOL)animated
 {
     [self updateUI];
 }
 
-
+/**
+ *  Lazy instantiation of Base Model
+ *
+ *  @return The Base Model.
+ */
 - (BaseModel *)baseModel {
     if (!_baseModel) {
         _baseModel = [[BaseModel alloc] initWithViewController:self];
@@ -46,7 +54,9 @@
     return _baseModel;
 }
 
-
+/**
+ *  Set up game UI, including borders and buttons.
+ */
 - (void)updateUI
 {
     // Set Up Border
@@ -65,6 +75,9 @@
     self.nextQuestionButton.alpha = 0;
 }
 
+/**
+ *  Loads a new question and its answer options.
+ */
 - (void)loadNewAnswer{
     
     [self initTimerWithTime:15];
@@ -95,6 +108,11 @@
     
 }
 
+/**
+ *  Stops timer, checks answer, animates correct/incorrect popup and shows next question button.
+ *
+ *  @param sender id to who calls the method.
+ */
 - (IBAction)checkAnswer:(id)sender {
     [self.circularTimer stop];
     CGSize viewSize = self.view.frame.size;
@@ -115,6 +133,11 @@
     [self.nextQuestionButton fadeIn];
 }
 
+/**
+ *  Removes next question button and shows check answer button and skip question button. Calls loadNewAnswer.
+ *
+ *  @param sender id to who calls the method.
+ */
 - (IBAction)nextQuestionPressed:(id)sender {
     self.nextQuestionButton.alpha = 0;
     [self.checkButton fadeIn];
@@ -123,6 +146,11 @@
     [self loadNewAnswer];
 }
 
+/**
+ *  Stops timer and calls loadNewAnswer.
+ *
+ *  @param sender id to who calls the method.
+ */
 - (IBAction)skipQuestion:(id)sender {
     // Button Animation
     [self deselectAll];
@@ -131,6 +159,11 @@
     [self loadNewAnswer];
 }
 
+/**
+ *  Selects an answer and sets it as chosen.
+ *
+ *  @param sender Selected answer.
+ */
 - (IBAction)clickOnAnswer:(id)sender {
     if(![sender isEqual:self.chosenAnswer])
         [self deselectAll];
@@ -139,6 +172,9 @@
     self.chosenAnswer = (UIButton*) sender;
 }
 
+/**
+ *  Deselect all answer buttons.
+ */
 - (void)deselectAll
 {
     [self.answerAButton deselect];
@@ -147,9 +183,11 @@
     [self.answerDButton deselect];
 }
 
+/**
+ *  Remove those pesky popups
+ */
 - (void)removeSubviews
 {
-    // Remove those pesky popups
     for (UIView *subView in self.view.subviews)
     {
         if ([subView isKindOfClass:[TimeOutPopUpView class]] ||
@@ -164,6 +202,11 @@
     }
 }
 
+/**
+ *  Initialize and start timer.
+ *
+ *  @param seconds Countdown in seconds.
+ */
 - (void)initTimerWithTime:(int)seconds
 {
     // Remove the last view
