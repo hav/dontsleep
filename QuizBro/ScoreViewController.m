@@ -14,15 +14,30 @@
 
 
 #import "ScoreViewController.h"
+#import "BoardViewController.h"
 
 @interface ScoreViewController ()
 
 @property NSInteger scorePointPlayerOne;
 @property NSInteger scorePointPlayerTwo;
 
+@property (nonatomic, strong) BoardViewController *player1Board;
+@property (nonatomic, strong) BoardViewController *player2Board;
+
 @end
 
 @implementation ScoreViewController
+
+- (id)initWithPlayerOne:(BoardViewController *)playerOne andPlayerTwo:(BoardViewController *)playerTwo {
+    self = [super init];
+    
+    if (self) {
+        self.player1Board = playerOne;
+        self.player2Board = playerTwo;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -39,6 +54,13 @@
     [self addCenterLine];
 }
 
+- (void)adjustScoreFor:(BoardViewController *)board toScore:(NSInteger)score {
+    
+}
+
+- (void)modifyFrameForPlayerOne {
+    
+}
 
 // Adds a black line in the middle of the view
 - (void)addCenterLine
@@ -52,6 +74,13 @@
     
     lineView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:lineView];
+    
+    UIView *playerOne = [[UIView alloc] initWithFrame:({
+        CGRect frame = self.view.bounds;
+        frame.size.height = 0;
+        frame.origin = CGPointMake(0, 0);
+        frame;
+    })];
 }
 
 // Adds a score box for player one.

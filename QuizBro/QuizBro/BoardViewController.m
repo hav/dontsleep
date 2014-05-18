@@ -69,6 +69,7 @@
 - (BaseModel *)baseModel {
     if (!_baseModel) {
         _baseModel = [[BaseModel alloc] initWithViewController:self];
+        _baseModel.boardDelegate = self;
     }
     
     return _baseModel;
@@ -131,7 +132,7 @@
     if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
         [resultAnswerPopUpView initWithResult:TRUE];
         self.rightAnswers = [NSNumber numberWithInt:self.rightAnswers.intValue + 1];
-        self.rightAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.rightAnswers];
+        [self.rightAnswersText setText:[NSString stringWithFormat:@"%d", (int) self.rightAnswers]];
     }
     else{
         [resultAnswerPopUpView initWithResult:FALSE];
@@ -226,8 +227,11 @@
     
     self.circularTimer.startBlock = ^(CircularTimerView *circularTimerView){
     };
+    
+    __weak BoardViewController *weakSelf = self;
+    
     self.circularTimer.endBlock = ^(CircularTimerView *circularTimerView){
-        [self timeOut];
+        [weakSelf timeOut];
     };
     
     
@@ -255,6 +259,12 @@
 }
 
 
+#pragma mark - BaseModel Protocol
 
+- (void)board:(BoardViewController *)board didUpdateScore:(int)score {
+    if ([board isEqual:self]) {
+        
+    }
+}
 
 @end

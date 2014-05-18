@@ -23,9 +23,7 @@
 - (BOOL)didSelectAnswer:(NSString *)answerText;
 - (NSDictionary *)randomQuestionAndAnswers;
 
-- (NSInteger *)getScore;
-
 @property (nonatomic, strong) id<BaseModelProtocol> gameDelegate;
-@property (nonatomic,strong) GameModel* gameModel;
+@property (nonatomic, strong) id<BaseModelProtocol> boardDelegate;
 
 @end

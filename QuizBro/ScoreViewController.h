@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class BoardViewController;
+
 @interface ScoreViewController : UIViewController
 
 - (void)addPointPlayerOne;
 - (void)addPointPlayerTwo;
 - (void)removePointPlayerOne;
 - (void)removePointPlayerTwo;
+
+- (void)adjustScoreFor:(BoardViewController *)board toScore:(NSInteger)score;
+- (id)initWithPlayerOne:(BoardViewController *)playerOne andPlayerTwo:(BoardViewController *)playerTwo;
 
 @end

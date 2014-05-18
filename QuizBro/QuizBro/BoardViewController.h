@@ -17,7 +17,7 @@
 @class GameViewController;
 
 
-@interface BoardViewController : UIViewController
+@interface BoardViewController : UIViewController <BaseModelProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *wrongAnswersText;
 @property (weak, nonatomic) IBOutlet UILabel *rightAnswersText;

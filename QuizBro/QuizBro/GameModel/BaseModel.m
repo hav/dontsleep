@@ -19,7 +19,7 @@
 @property (nonatomic, strong) Question *currentQuestion;
 @property (nonatomic, strong) Answer *currentCorrectAnswer;
 
-@property (nonatomic) NSInteger *myScore;
+@property (nonatomic) NSInteger myScore;
 
 @end
 
@@ -78,18 +78,16 @@ static const int WRONG_ANSWER_PENALTY = 1;
 - (BOOL)didSelectAnswer:(NSString *)answerText {
     if ([self.currentCorrectAnswer.answerText isEqualToString:answerText]) {
         self.myScore = self.myScore + CORRECT_ANSWER_BONUS;
-        
-        for (int i = 0; i < CORRECT_ANSWER_BONUS; i++) {
-            [self.gameModel scoreAddedForPlayer:self];
-        }
+        [self.gameDelegate board:self.boardViewController didUpdateScore:self.myScore];
+        [self.boardDelegate board:self.boardViewController didUpdateScore:self.myScore];
         
         return YES;
     }
     
-    for (int i = 0; i < WRONG_ANSWER_PENALTY; i++) {
-        [self.gameModel scoreSubtractedForPlayer:self];
-    }
     self.myScore = self.myScore - WRONG_ANSWER_PENALTY;
+    [self.gameDelegate board:self.boardViewController didUpdateScore:self.myScore];
+    [self.boardDelegate board:self.boardViewController didUpdateScore:self.myScore];
+    
     return NO;
 }
 
@@ -111,12 +109,5 @@ static const int WRONG_ANSWER_PENALTY = 1;
     
     return [dict copy];
 }
-
-#pragma mark - Score
-
-- (NSInteger *) getScore{
-    return self.myScore;
-}
-
 
 @end

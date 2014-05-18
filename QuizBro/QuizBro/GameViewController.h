@@ -14,6 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *leftContainer;
 @property (weak, nonatomic) IBOutlet UIView *rightContainer;
-@property (strong,nonatomic) GameModel* gameModel;
+//@property (strong,nonatomic) GameModel* gameModel;
 
 @end
