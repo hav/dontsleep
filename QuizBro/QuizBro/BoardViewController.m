@@ -37,14 +37,15 @@
     [self updateUI];
 }
 
+
 - (BaseModel *)baseModel {
     if (!_baseModel) {
         _baseModel = [[BaseModel alloc] initWithViewController:self];
-        _baseModel.boardDelegate = self;
     }
     
     return _baseModel;
 }
+
 
 - (void)updateUI
 {
@@ -99,6 +100,13 @@
     CGSize viewSize = self.view.frame.size;
 
     ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
+    
+    if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
+        [resultAnswerPopUpView initWithResult:TRUE];
+    }
+    else{
+        [resultAnswerPopUpView initWithResult:FALSE];
+    }
     
     [BoardAnimations animatePopupwith:resultAnswerPopUpView on:self.view];
     
