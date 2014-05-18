@@ -26,8 +26,11 @@
     self.layer.backgroundColor = color.CGColor;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+/**
+ *  Draws the button
+ *
+ *  @param rect Given Rectangle button is to be drawn in
+ */
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
@@ -88,7 +91,6 @@
     UIColor *newColor = [UIColor whiteColor];
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-//                         self.layer.borderColor = newColor.CGColor;
                          self.backgroundColor = newColor;
                          self.layer.backgroundColor = newColor.CGColor;}
                      completion:nil];

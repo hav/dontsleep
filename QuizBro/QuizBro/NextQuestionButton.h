@@ -7,7 +7,9 @@
 //
 
 #import "BaseButton.h"
-
+/**
+ *  Class for the Next Question Button
+ */
 @interface NextQuestionButton : BaseButton
 
 @end

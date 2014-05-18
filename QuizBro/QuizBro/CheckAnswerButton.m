@@ -21,6 +21,12 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+
+/**
+ *  Draws the shape of the check answer button
+ *
+ *  @param rect Rectangle the button should be drawn in
+ */
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];

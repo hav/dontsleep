@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ *  The popup window with the result of our move
+ */
 @interface ResultAnswerPopUpView : UIView
 
+/**
+ *  Creates a popup with a given result
+ *
+ *  @param result YES for a sucessful result, NO for an unsucessful result
+ */
 -(void)initWithResult:(BOOL)result;
 
 @end

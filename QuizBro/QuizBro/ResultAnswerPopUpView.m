@@ -7,6 +7,7 @@
 //
 
 #import "ResultAnswerPopUpView.h"
+#import "GameColors.h"
 
 @interface ResultAnswerPopUpView()
 @property (nonatomic) UIColor* yellow;
@@ -16,24 +17,11 @@
 
 @implementation ResultAnswerPopUpView
 
-- (UIColor*)green
-{
-    if(!_green)
-    {
-        _green = [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
-    }
-    return _green;
-}
-
-- (UIColor*)yellow
-{
-    if(!_yellow)
-    {
-        _yellow = [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-    }
-    return _yellow;
-}
-
+/**
+ *  Initializes the textLabel Attribute
+ *
+ *  @return returns a new text Label if it has not been intialized, and the current label if it has
+ */
 - (UILabel *)textLabel {
     if (!_textLabel) {
         _textLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, self.frame.size.width - 20, 30)];
@@ -42,6 +30,13 @@
     return _textLabel;
 }
 
+/**
+ *  Standard IOS function to init the view in a given frame
+ *
+ *  @param frame The boundaries of our view
+ *
+ *  @return it returns the current instance of our ResultAnswerPopUpView
+ */
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -53,7 +48,11 @@
     return self;
 }
 
-
+/**
+ *  Initializes our function with a gien result
+ *
+ *  @param result YES or NO, depending on the result
+ */
 -(void)initWithResult:(BOOL)result
 {
     self.layer.borderWidth = 1;
@@ -61,16 +60,21 @@
     
     if(result){
         [self setText:@"Correct answer!"];
-        [self setBackgroundColor:self.green];
-        self.layer.borderColor = self.green.CGColor;
+        [self setBackgroundColor:GameColors.green];
+        self.layer.borderColor = GameColors.green.CGColor;
     }
     else{
         [self setText:@"Wrong answer!"];
-        [self setBackgroundColor:self.yellow];
-        self.layer.borderColor = self.yellow.CGColor;
+        [self setBackgroundColor:GameColors.yellow];
+        self.layer.borderColor = GameColors.yellow.CGColor;
     }
 }
 
+/**
+ *  Sets the text to our label
+ *
+ *  @param text Text to be set on the label
+ */
 -(void)setText:(NSString*)text
 {
     [self.textLabel setText:text];

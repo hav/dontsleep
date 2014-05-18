@@ -7,7 +7,9 @@
 //
 
 #import "BaseButton.h"
-
+/**
+ *  Class for Answer Button
+ */
 @interface AnswerButton : BaseButton
 
 @end

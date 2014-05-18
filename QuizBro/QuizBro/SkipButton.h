@@ -7,7 +7,9 @@
 //
 
 #import "BaseButton.h"
-
+/**
+ *  Class for the Skip Button
+ */
 @interface SkipButton : BaseButton
 
 @end

@@ -21,6 +21,12 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+
+/**
+ *  Draws the Skip Button
+ *
+ *  @param rect 
+ */
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];

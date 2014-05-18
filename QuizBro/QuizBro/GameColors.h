@@ -7,10 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/**
+ *  Useful class for holding the reused colors
+ */
 @interface GameColors : NSObject
 
+/**
+ *  Returns our green color
+ *
+ *  @return UIColor of a specific type of green
+ */
 + (UIColor*)green;
+
+/**
+ *  Returns our yellow color
+ *
+ *  @return UIColor of a specific type of yellow
+ */
 + (UIColor*)yellow;
 
 @end

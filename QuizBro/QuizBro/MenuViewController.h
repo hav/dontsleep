@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ *  Initial Menu for the QuizBro App
+ */
 @interface MenuViewController : UIViewController
 
 @end

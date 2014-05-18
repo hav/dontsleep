@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ *  Pop up view for when we time out
+ */
 @interface TimeOutPopUpView : UIView
 
 @end
