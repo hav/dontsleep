@@ -13,6 +13,7 @@
 #import "GameViewController.h"
 #import "DataManager.h"
 #import "CircularTimerView.h"
+#import "GameColors.h"
 
 @interface BoardViewController ()
 
@@ -36,16 +37,6 @@
     [self updateUI];
 }
 
-- (UIColor*)green
-{
-    return [UIColor colorWithRed:124.0f/255.0f green:199.0f/255.0f blue:11.0f/255.0f alpha:1.0f];
-}
-
-- (UIColor*)yellow
-{
-    return [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-}
-
 - (BaseModel *)baseModel {
     if (!_baseModel) {
         _baseModel = [[BaseModel alloc] initWithViewController:self];
@@ -66,8 +57,8 @@
     
     // Edit Next Question Button
     self.nextQuestionButton.layer.borderWidth = 1;
-    self.nextQuestionButton.layer.borderColor = self.green.CGColor;
-    self.nextQuestionButton.layer.backgroundColor = self.green.CGColor;
+    self.nextQuestionButton.layer.borderColor = GameColors.green.CGColor;
+    self.nextQuestionButton.layer.backgroundColor = GameColors.green.CGColor;
     self.nextQuestionButton.layer.cornerRadius = 8;
     self.nextQuestionButton.layer.masksToBounds = YES;
     self.nextQuestionButton.alpha = 0;
@@ -136,7 +127,7 @@
     if(![sender isEqual:self.chosenAnswer])
         [self deselectAll];
     // Button Animation
-    [(BaseButton*)sender invertSelectionfromColor:self.green];
+    [(BaseButton*)sender invertSelectionfromColor:GameColors.green];
     self.chosenAnswer = (UIButton*) sender;
 }
 
@@ -183,8 +174,8 @@
     
     self.circularTimer.backgroundColor = [UIColor lightGrayColor];
     self.circularTimer.backgroundFadeColor = [UIColor lightGrayColor];
-    self.circularTimer.foregroundColor = self.green;
-    self.circularTimer.foregroundFadeColor = self.green;
+    self.circularTimer.foregroundColor = GameColors.green;
+    self.circularTimer.foregroundFadeColor = GameColors.green;
     self.circularTimer.direction = CircularTimerViewDirectionClockwise;
     self.circularTimer.font = [UIFont systemFontOfSize:9];
     

@@ -16,6 +16,7 @@
 		3141B1C918F7FB4F009EA639 /* CircularTimerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3141B1C818F7FB4F009EA639 /* CircularTimerView.m */; };
 		31490C6E18F7E67D00C7DE20 /* BoardAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */; };
 		314D0B9618F5AB09004F2010 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314D0B9518F5AB09004F2010 /* Images.xcassets */; };
+		3199F2D71928BE0C00085AB7 /* GameColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3199F2D61928BE0C00085AB7 /* GameColors.m */; };
 		31A2FA5C18F57EE100856C50 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A2FA5B18F57EE100856C50 /* MenuViewController.m */; };
 		910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49DF18ED5FCF00C806E6 /* BoardViewController.m */; };
 		910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910B49E118ED5FCF00C806E6 /* GameViewController.m */; };
@@ -72,6 +73,8 @@
 		31490C6C18F7E67D00C7DE20 /* BoardAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardAnimations.h; sourceTree = "<group>"; };
 		31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardAnimations.m; sourceTree = "<group>"; };
 		314D0B9518F5AB09004F2010 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3199F2D51928BE0C00085AB7 /* GameColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameColors.h; sourceTree = "<group>"; };
+		3199F2D61928BE0C00085AB7 /* GameColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameColors.m; sourceTree = "<group>"; };
 		31A2FA5A18F57EE100856C50 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		31A2FA5B18F57EE100856C50 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		910B49DE18ED5FCF00C806E6 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
@@ -157,6 +160,15 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		3199F2D81928BE1100085AB7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3199F2D51928BE0C00085AB7 /* GameColors.h */,
+				3199F2D61928BE0C00085AB7 /* GameColors.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		31A2FA5918F57C4200856C50 /* CircularTimerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 				9155BB5B190154E300D39B74 /* ScoreViewController.m */,
 				910B49DE18ED5FCF00C806E6 /* BoardViewController.h */,
 				910B49DF18ED5FCF00C806E6 /* BoardViewController.m */,
+				3199F2D81928BE1100085AB7 /* Utilities */,
 				31490C6C18F7E67D00C7DE20 /* BoardAnimations.h */,
 				31490C6D18F7E67D00C7DE20 /* BoardAnimations.m */,
 				910B49E018ED5FCF00C806E6 /* GameViewController.h */,
@@ -388,6 +401,7 @@
 				910B49E318ED5FCF00C806E6 /* GameViewController.m in Sources */,
 				91674EA718F5832000A85AB9 /* TimeOutPopUpView.m in Sources */,
 				910B49E218ED5FCF00C806E6 /* BoardViewController.m in Sources */,
+				3199F2D71928BE0C00085AB7 /* GameColors.m in Sources */,
 				E8BA3C9F18E99AFB00D4B278 /* BaseModel.m in Sources */,
 				3106397518FD3FBF007DC05F /* BaseButton.m in Sources */,
 				31490C6E18F7E67D00C7DE20 /* BoardAnimations.m in Sources */,

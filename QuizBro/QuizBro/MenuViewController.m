@@ -11,6 +11,7 @@
 @interface MenuViewController ()
 
 @property (nonatomic) BOOL animating;
+@property (nonatomic) BOOL titleAnimating;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSString* questionMarkText;
@@ -51,43 +52,50 @@
     return _questionMarkText;
 }
 
+- (void)animateQuestionMarks
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGSize size = self.view.bounds.size;
+        int x = [self randomIntBetween:0 and:size.width];
+        int y = -70;
+        
+        UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 70, 70)];
+        questionMark.text = self.questionMarkText;
+        questionMark.textAlignment = NSTextAlignmentCenter;
+        
+        NSMutableAttributedString *atbQuestionText = [[NSMutableAttributedString alloc] initWithString:questionMark.text];
+        [atbQuestionText addAttribute:NSFontAttributeName
+                                value:[UIFont boldSystemFontOfSize:[self randomIntBetween:12 and:24]]
+                                range:NSMakeRange(0, questionMark.text.length)];
+        
+        [atbQuestionText addAttribute:NSForegroundColorAttributeName
+                                value:[UIColor colorWithRed:[self randomDouble] green:[self randomDouble] blue:[self randomDouble] alpha:1.0]
+                                range:NSMakeRange(0,questionMark.text.length)];
+        
+        [questionMark setAttributedText:atbQuestionText.copy];
+        [self.view addSubview:questionMark];
+        
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             questionMark.alpha = 0.1;
+                             questionMark.frame = CGRectMake(x,size.height + 30,70, 70);
+                         }
+                         completion:nil];
+    });
+    [NSThread sleepForTimeInterval:(arc4random() % 10) * .005];
+}
+
 - (void)animationLoop
 {
     while(self.animating)
     {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CGSize size = self.view.bounds.size;
-            int x = [self randomIntBetween:0 and:size.width];
-            int y = 0;
-
-            UILabel* questionMark = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 70, 70)];
-            questionMark.text = self.questionMarkText;
-            
-            questionMark.textAlignment = NSTextAlignmentCenter;
-            NSMutableAttributedString *atbQuestionText = [[NSMutableAttributedString alloc] initWithString:questionMark.text];
-            [atbQuestionText addAttribute:NSFontAttributeName
-                                    value:[UIFont systemFontOfSize:[self randomIntBetween:12 and:24]]
-                                    range:NSMakeRange(0, questionMark.text.length)];
-            questionMark.alpha = 0.5;
-            
-//            If we want it green, like in the matrix!
-//            [atbQuestionText addAttribute:NSForegroundColorAttributeName
-//                                    value:[UIColor greenColor]
-//                                    range:NSMakeRange(0,questionMark.text.length)];
-            
-            [questionMark setAttributedText:atbQuestionText.copy];
-            [self.view addSubview:questionMark];
-            
-            [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                             animations:^{
-                                 questionMark.alpha = 0.1;
-                                 questionMark.frame = CGRectMake(x,size.height + 30,70, 70);
-                             }
-                             completion:nil];
-        });
-        float randomFloat = (arc4random() % 10) * .005;
-        [NSThread sleepForTimeInterval:randomFloat];
+        [self animateQuestionMarks];
     }
+}
+
+- (double)randomDouble
+{
+    return drand48();
 }
 
 - (int)randomIntBetween:(int)low and:(int)high
