@@ -7,8 +7,9 @@
 //
 
 #define heightStartingPosition self.view.frame.size.height/2
-#define scoreDim 20
 #define widthStartingPosition self.view.frame.size.width/2 - scoreDim
+
+#define scoreDim 20
 #define playerOneTagConstant 0
 #define playerTwoTagConstant 100
 
@@ -23,6 +24,16 @@
 
 @property (nonatomic, strong) BoardViewController *player1Board;
 @property (nonatomic, strong) BoardViewController *player2Board;
+@property (weak, nonatomic) IBOutlet UILabel *playerOneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playerTwoLabel;
+
+@property (nonatomic) NSInteger oldPlayerOneScore;
+@property (nonatomic) NSInteger oldPlayerTwoScore;
+@property (nonatomic) NSInteger playerOneScore;
+@property (nonatomic) NSInteger playerTwoScore;
+
+@property (nonatomic, strong) UIView *playerOneScoreView;
+@property (nonatomic, strong) UIView *playerTwoScoreView;
 
 @end
 
@@ -42,25 +53,96 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.view.backgroundColor = [UIColor blackColor];
     
     self.scorePointPlayerOne = 0;
     self.scorePointPlayerTwo = 0;
-
+    self.playerOneScore = 0;
+    self.playerTwoScore = 0;
+    //[self updateFrames];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    [self addCenterLine];
+    //[self addCenterLine];
+}
+
+#pragma mark - Lazy instantiation
+
+- (UIView *)playerOneScoreView {
+    if (!_playerOneScoreView) {
+        _playerOneScoreView = [[UIView alloc] initWithFrame:({
+            CGRect frame = self.view.frame;
+            frame.size.height = 100;
+            frame.size.width = 64.0f;
+            frame.origin.x = 0;
+            frame.origin.y = 344;
+            frame;
+        })];
+        //_playerOneScoreView.backgroundColor = [UIColor greenColor];
+        _playerOneScoreView.layer.backgroundColor = [UIColor greenColor].CGColor;
+        [self.view addSubview:_playerOneScoreView];
+    }
+    
+    return _playerOneScoreView;
+}
+
+- (UIView *)playerTwoScoreView {
+    if (!_playerTwoScoreView) {
+        _playerTwoScoreView = [[UIView alloc] initWithFrame:({
+            CGRect frame = self.view.frame;
+            frame.size.height = 100;
+            frame.size.width = 64.0f;
+            frame.origin.x = 0;
+            frame.origin.y = 364;
+            frame;
+        })];
+        //_playerTwoScoreView.backgroundColor = [UIColor redColor];
+        _playerTwoScoreView.layer.backgroundColor = [UIColor redColor].CGColor;
+        [self.view addSubview:_playerTwoScoreView];
+    }
+    
+    return _playerTwoScoreView;
 }
 
 - (void)adjustScoreFor:(BoardViewController *)board toScore:(NSInteger)score {
+    if ([board isEqual:self.player1Board]) {
+        //self.oldPlayerOneScore = self.playerOneScore;
+        self.playerOneScore = score;
+    } else {
+        //self.oldPlayerTwoScore = self.playerTwoScore;
+        self.playerTwoScore = score;
+    }
     
+    //[self updateFrames];
 }
 
-- (void)modifyFrameForPlayerOne {
-    
+- (void)setPlayerOneScore:(NSInteger)playerOneScore {
+    self.playerOneLabel.text = [NSString stringWithFormat:@"%d", playerOneScore];
+    _playerOneScore = playerOneScore;
 }
+
+- (void)setPlayerTwoScore:(NSInteger)playerTwoScore {
+    self.playerTwoLabel.text = [NSString stringWithFormat:@"%d", playerTwoScore];
+    _playerTwoScore = playerTwoScore;
+}
+
+- (void)updateFrames {
+    CABasicAnimation *playerOneAnimation = [CABasicAnimation animationWithKeyPath:@"frame.size.height"];
+    playerOneAnimation.duration = 0.2;
+    playerOneAnimation.fromValue = @(self.oldPlayerOneScore/100);
+    playerOneAnimation.toValue = @(self.playerOneScore/100);
+    
+    [self.playerTwoScoreView.layer addAnimation:playerOneAnimation forKey:@"ScorePositioning"];
+    
+    CABasicAnimation *playerTwoAnimation = [CABasicAnimation animationWithKeyPath:@"frame.size.height"];
+    playerTwoAnimation.duration = 0.2;
+    playerTwoAnimation.fromValue = @(self.oldPlayerTwoScore);
+    playerTwoAnimation.toValue = @(self.playerTwoScore);
+    [self.playerTwoScoreView.layer addAnimation:playerTwoAnimation forKey:@"ScorePositioning"];
+}
+
 
 // Adds a black line in the middle of the view
 - (void)addCenterLine
@@ -75,12 +157,6 @@
     lineView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:lineView];
     
-    UIView *playerOne = [[UIView alloc] initWithFrame:({
-        CGRect frame = self.view.bounds;
-        frame.size.height = 0;
-        frame.origin = CGPointMake(0, 0);
-        frame;
-    })];
 }
 
 // Adds a score box for player one.
