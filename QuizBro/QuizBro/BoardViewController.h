@@ -19,9 +19,6 @@
 
 @interface BoardViewController : UIViewController <BaseModelProtocol>
 
-@property (weak, nonatomic) IBOutlet UILabel *wrongAnswersText;
-@property (weak, nonatomic) IBOutlet UILabel *rightAnswersText;
-
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @property (weak, nonatomic) IBOutlet AnswerButton *answerAButton;
 @property (weak, nonatomic) IBOutlet AnswerButton *answerBButton;

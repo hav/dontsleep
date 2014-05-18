@@ -16,8 +16,6 @@
 
 @interface BoardViewController ()
 
-@property (nonatomic)  NSNumber* rightAnswers;
-@property (nonatomic)  NSNumber* wrongAnswers;
 @property (nonatomic) CircularTimerView *circularTimer;
 
 @end
@@ -46,24 +44,6 @@
 - (UIColor*)yellow
 {
     return [UIColor colorWithRed:254.0f/255.0f green:191.0f/255.0f blue:15.0f/255.0f alpha:1.0f];
-}
-
-- (NSNumber*)rightAnswers
-{
-    if(!_rightAnswers)
-    {
-        _rightAnswers = 0;
-    }
-    return _rightAnswers;
-}
-
-- (NSNumber*)wrongAnswers
-{
-    if(!_wrongAnswers)
-    {
-        _wrongAnswers = 0;
-    }
-    return _wrongAnswers;
 }
 
 - (BaseModel *)baseModel {
@@ -128,17 +108,6 @@
     CGSize viewSize = self.view.frame.size;
 
     ResultAnswerPopUpView *resultAnswerPopUpView = [[ResultAnswerPopUpView alloc] initWithFrame:CGRectMake(20, viewSize.height / 3, viewSize.width - 20, 30)];
-    
-    if([self.baseModel didSelectAnswer:self.chosenAnswer.titleLabel.text]){
-        [resultAnswerPopUpView initWithResult:TRUE];
-        self.rightAnswers = [NSNumber numberWithInt:self.rightAnswers.intValue + 1];
-        [self.rightAnswersText setText:[NSString stringWithFormat:@"%d", (int) self.rightAnswers]];
-    }
-    else{
-        [resultAnswerPopUpView initWithResult:FALSE];
-        self.wrongAnswers = [NSNumber numberWithInt:self.wrongAnswers.intValue + 1];
-        self.wrongAnswersText.text = [NSString stringWithFormat:@"%d", (int) self.wrongAnswers];
-    }
     
     [BoardAnimations animatePopupwith:resultAnswerPopUpView on:self.view];
     
